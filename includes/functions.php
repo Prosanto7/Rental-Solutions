@@ -59,18 +59,21 @@
         $tagArray = explode((","), $tags);
 
         foreach ($tagArray as $tag) {
-            echo "<li> <a href=''> {$tag} </a> </li>";
+            echo "<li class='mr-2'> <a href=''> {$tag} </a> </li>";
         }
     }
 
+    function getFormattedDate($date) {
+        return date("d M y", strtotime($date));
+    }
+
     function showSinglePost($row) {
-        $postDate = strtotime($row["post_date"]);
         ?>
             <div class="col-md-6 mb-4">
                 <article class="card article-card article-card-sm h-100">
-                    <a href="">
+                    <a href="post.php?id=<?php echo $row["post_id"]; ?>">
                         <div class="card-image">
-                            <div class="post-info"> <span class="text-uppercase"><?php echo date("d M y", $postDate) ?></span>
+                            <div class="post-info"> <span class="text-uppercase"><?php echo getFormattedDate($row["post_date"]) ?></span>
                                 <span class="text-uppercase"><?php echo showTimeDifference($row["post_date"]) ?> ago</span>
                             </div>
                             <img loading="lazy" decoding="async" src="images/post/<?php echo $row["post_image"]?>" alt="Post Thumbnail" class="w-100">
@@ -81,14 +84,32 @@
                             <?php showTags($row["post_tags"]) ?>
                         </ul>
                         <h2>
-                            <a class="post-title" href="article.html"><?php echo $row["post_title"] ?></a>
+                            <a class="post-title" href="post.php?id=<?php echo $row["post_id"]; ?>"><?php echo $row["post_title"] ?></a>
                         </h2>
                         <p class="card-text" style="max-height:100px; overflow:hidden"><?php echo $row["post_content"] ?></p>
-                        <div class="content"> <a class="read-more-btn" href="article.html">Read Full Article</a>
+                        <div class="content"> 
+                            <a class="read-more-btn" href="post.php?id=<?php echo $row["post_id"]; ?>">See Full Post</a>
                         </div>
                     </div>
                 </article>
             </div>
         <?php
+    }
+
+    function showSimilarPosts() {
+        $similarPosts = executeQuery("SELECT * FROM posts LIMIT 4");
+         
+        while ($row = $similarPosts->fetch_assoc()) {
+            ?>
+				<a class="media align-items-center" href="post.php?id=<?php echo $row["post_id"]; ?>">
+					<img loading="lazy" decoding="async" src="images/post/<?php echo $row["post_image"]; ?>"
+									alt="Post Thumbnail" class="w-100">
+					<div class="media-body ml-3">
+                    <h3 style="margin-top:-5px"><?php echo $row["post_title"]; ?></h3>
+                    <p class="mb-0 small" style="max-height: 60px; overflow:hidden"><?php echo $row["post_content"]; ?></p>
+					</div>
+				</a>
+            <?php 
+        }                         
     }
 ?>

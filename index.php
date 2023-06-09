@@ -4,7 +4,7 @@
     require_once('includes/navigation.php');
 ?>
 
-<main>
+  <main>
     <section class="section">
       <div class="container">
         <div class="row no-gutters-lg">
