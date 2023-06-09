@@ -20,8 +20,13 @@
         }
     }
 
-    function showHomePagePosts() {
-        $allPosts = executeQuery("SELECT * FROM posts");
+    function showHomePagePosts($searchKeyword) {
+        if ($searchKeyword == "") {
+            $allPosts = executeQuery("SELECT * FROM posts LIMIT 8");
+        } else {
+            $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$searchKeyword%' OR post_title LIKE '%$searchKeyword%'");
+        }
+        
         while ($row = $allPosts->fetch_assoc()) {
             showSinglePost($row);
 

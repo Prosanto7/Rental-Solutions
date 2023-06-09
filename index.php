@@ -13,7 +13,13 @@
           </div>
           <div class="col-lg-8 mb-5 mb-lg-0">
             <div class="row">
-              <?php showHomePagePosts(); ?>
+              <?php 
+                if (isset($_POST["searchKeyword"])) {
+                  showHomePagePosts($_POST["searchKeyword"]);
+                } else {
+                  showHomePagePosts("");
+                }
+              ?>
             </div>
           </div>
           <div class="col-lg-4">

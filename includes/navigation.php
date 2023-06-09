@@ -10,8 +10,8 @@
                 </button>
             </div>
 
-            <form action="#!" class="search order-lg-3 order-md-2 order-3 ml-auto">
-                <input id="search-query" name="s" type="search" placeholder="Search..." autocomplete="off">
+            <form action="index.php" method="POST" class="search order-lg-3 order-md-2 order-3 ml-auto">
+                <input id="search-query" name="searchKeyword" type="search" placeholder="Search..." autocomplete="off">
             </form>
 
             <div class="collapse navbar-collapse text-center order-lg-2 order-4" id="navigation">
