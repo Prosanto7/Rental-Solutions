@@ -17,20 +17,18 @@
             <div class="collapse navbar-collapse text-center order-lg-2 order-4" id="navigation">
                 <ul class="navbar-nav mx-auto mt-3 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Me</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Articles
+                            Categories
                         </a>
                         <div class="dropdown-menu"> 
-                            <a class="dropdown-item" href="">Option 1</a>
-                            <a class="dropdown-item" href="">Option 2</a>
-                            <a class="dropdown-item" href="">Option 3</a>
+                            <?php showAllCategories() ?>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
