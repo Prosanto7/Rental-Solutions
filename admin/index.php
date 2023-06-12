@@ -5,5 +5,6 @@
 ?>
 
 <?php    
+    require_once('includes/main-section.php');
     require_once('includes/footer.php');
 ?>
