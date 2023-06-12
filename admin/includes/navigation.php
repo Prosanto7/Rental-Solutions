@@ -17,8 +17,9 @@
             <a href="">
                 <span class="material-symbols-sharp">post</span>
                 <h3>Posts</h3>
+                <span class="post-count">26</span>
             </a>
-            <a href="">
+            <a href="" class="active">
                 <span class="material-symbols-sharp">category</span>
                 <h3>Categories</h3>
             </a>
