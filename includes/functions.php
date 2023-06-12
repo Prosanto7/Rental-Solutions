@@ -29,12 +29,6 @@
         
         while ($row = $allPosts->fetch_assoc()) {
             showSinglePost($row);
-
-            $anotherRow = $allPosts->fetch_assoc();
-
-            if ($anotherRow) {
-                showSinglePost($anotherRow);
-            }
         }
     }
 
