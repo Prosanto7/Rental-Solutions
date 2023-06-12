@@ -10,7 +10,7 @@
                 </div>
                 <div class="progress">
                     <svg>
-                        <circle cx='38' cy='38' r='36'></circle>
+                        <circle cx='38' cy='40' r='35'></circle>
                     </svg>
                     <div class="number">
                         <p>81%</p>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="progress">
                     <svg>
-                        <circle cx='38' cy='38' r='36'></circle>
+                        <circle cx='38' cy='40' r='35'></circle>
                     </svg>
                     <div class="number">
                         <p>81%</p>
