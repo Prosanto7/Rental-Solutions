@@ -8,5 +8,6 @@
         setCenterComponent($_GET["page"]);
     }
     
+    require_once('includes/top-navigation.php');
     require_once('includes/footer.php');
 ?>

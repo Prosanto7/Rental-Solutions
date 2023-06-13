@@ -1,6 +1,6 @@
 <style>
     .container{
-        grid-template-columns: 15rem auto 0rem;
+        grid-template-columns: 15rem auto 8rem;
     }
 </style>
 
