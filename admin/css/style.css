@@ -30,6 +30,10 @@
 .dark-theme-variables {
     --color-background: #181a1e;
     --color-white: #202528;
+    --color-primary: #edeffd;
+    --color-success: #99edba;
+    --color-danger: #f89999;
+    --color-primary: #edeffd;
     --color-dark: #edeffd;
     --color-dark-variant: #a3bdcc;
     --color-light: rgba(0, 0, 0, 0.4);
@@ -294,7 +298,7 @@ main .posts table:hover{
 main table tbody td {
     height: 2.8rem;
     border-bottom: 1px solid var(--color-dark-variant);
-    color: black;
+    color: var(--color-dark);
     font-size: 1rem;
     max-width: 10rem;
 }
