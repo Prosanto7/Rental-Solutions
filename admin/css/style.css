@@ -2,12 +2,12 @@
 
 /* ====== ROOT VARIABLES ====== */
 :root {
-    --color-primary: #2438e9;
+    --color-primary: #7380ec;
     --color-danger: #eb4654;
     --color-success:#14a575;
     --color-warning: #ffbb55;
     --color-white: #ffffff;
-    --color-info-dark: #7d8da1;
+    --color-info-dark: #a7b4c4;
     --color-info-light: #dce1eb;
     --color-dark: #363949;
     --color-light: rgba(132, 139, 200, 0.18);
@@ -23,21 +23,20 @@
     --card-padding: 1.8rem;
     --padding-1: 1.2rem;
     
-    --box-shadow: 0 2rem 3rem var(--color-info-light);
-    --box-shadow-dark: 0 0.5rem 2rem var(--color-info-dark);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --box-shadow-dark: 0 2rem 3rem var(--color-info-dark);
 }
 
 .dark-theme-variables {
     --color-background: #181a1e;
     --color-white: #202528;
-    --color-primary: #edeffd;
     --color-success: #99edba;
     --color-danger: #f89999;
-    --color-primary: #edeffd;
     --color-dark: #edeffd;
     --color-dark-variant: #a3bdcc;
     --color-light: rgba(0, 0, 0, 0.4);
-    --box-shadhow: 0 2rem 3rem var(--color-light);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --box-shadow-dark: 0 2rem 3rem rgba(0, 0, 0, 1);
 }
 
 *{
@@ -163,7 +162,6 @@ aside .close {
 
 /* ====== SIDE BAR STARTS ====== */
 aside .sidebar{
-    background: white;
     display: flex;
     flex-direction: column;
     height: 84vh;
@@ -174,7 +172,7 @@ aside .sidebar{
 
 aside .sidebar a{
     display: flex;
-    color: var(--color-info-dark);
+    /* color: var(--color-info-dark); */
     margin-left: 2rem;
     gap: 1rem;
     align-items: center;
@@ -194,6 +192,7 @@ aside .sidebar a:last-child {
 }
 
 aside .sidebar a.active{
+    background: var(--color-light);
     color: var(--color-primary);
     margin-left: 0;
 }
@@ -254,7 +253,7 @@ main .insights > div:hover {
 }
 
 main .insights > div span {
-    background: var(--color-primary-variant);
+    background: var(--color-primary);
     padding: 0.5rem;
     border-radius: 50%;
     color: var(--color-white);

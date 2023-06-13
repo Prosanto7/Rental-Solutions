@@ -2,7 +2,7 @@
     <aside>
         <div class="top">
             <div class="logo">
-                <img src="images/logo.png" alt="Rental Solutions">
+                <img id="logoImage" src="images/logo.png" alt="Rental Solutions">
             </div>
             <div class="close" id="close-btn">
                 <span class="material-symbols-sharp">close</span>

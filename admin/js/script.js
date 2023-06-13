@@ -16,4 +16,13 @@ themeToggler.addEventListener('click', () => {
 
     themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
     themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
+
+    var img = document.getElementById('logoImage').src;
+
+    if (img.indexOf('logo.png') != -1) {
+        document.getElementById('logoImage').src = 'images/logo-white.png';
+    } else {
+        document.getElementById('logoImage').src = 'images/logo.png';
+    }
 })
+
