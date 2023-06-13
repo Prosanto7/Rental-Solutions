@@ -8,14 +8,6 @@
                     <h3>Approved Posts</h3>
                     <h1>34</h1>
                 </div>
-                <div class="progress">
-                    <svg>
-                        <circle cx='38' cy='40' r='35'></circle>
-                    </svg>
-                    <div class="number">
-                        <p>81%</p>
-                    </div>
-                </div>
             </div>
         </div> 
 
@@ -24,15 +16,7 @@
             <div class="middle">
                 <div class="left">
                     <h3>User/Post Ratio</h3>
-                    <h1>34</h1>
-                </div>
-                <div class="progress">
-                    <svg>
-                        <circle cx='38' cy='40' r='35'></circle>
-                    </svg>
-                    <div class="number">
-                        <p>81%</p>
-                    </div>
+                    <h1>34%</h1>
                 </div>
             </div>
         </div> 

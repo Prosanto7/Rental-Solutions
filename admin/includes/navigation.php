@@ -10,16 +10,16 @@
         </div>
 
         <div class="sidebar">
-            <a href="">
+            <a href="index.php?page=dashboard">
                 <span class="material-symbols-sharp">grid_view</span>
                 <h3>Dashboard</h3>
             </a>
-            <a href="">
+            <a href="index.php?page=posts">
                 <span class="material-symbols-sharp">post</span>
                 <h3>Posts</h3>
                 <span class="post-count">26</span>
             </a>
-            <a href="" class="active">
+            <a href="index.php?page=categories" class="active">
                 <span class="material-symbols-sharp">category</span>
                 <h3>Categories</h3>
             </a>
