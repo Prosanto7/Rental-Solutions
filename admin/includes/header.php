@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/style.css">
 
         <!-- Material CDN -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Material+Symbols+Sharp" rel="stylesheet">
     </head>
 
     <body>
