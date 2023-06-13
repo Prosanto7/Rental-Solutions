@@ -334,3 +334,55 @@ main .posts a {
     border-radius: var(--border-radius-1);
 }
 
+/* =============== MEDIA QUERIES =============== */
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    /* aside .logo {
+    } */
+
+    aside .sidebar h3 {
+        display: none;
+    }
+
+    aside .sidebar a {
+        width: 5.6rem;
+    }
+
+    aside .sidebar a:last-child {
+        position: relative;
+        margin-top: 1.8rem;
+    }
+
+    main .insights {
+        grid-template-columns: 1fr;
+        gap: 0;   
+    }
+
+    main .posts h2 {
+        display: none;
+    }
+
+    main .posts {
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 5rem 0 0 9rem;
+    }
+
+    main .posts table {
+        width: 83vw;
+    }
+
+    main table thead tr th:nth-last-child(-n+3) {
+        display: none;
+    }
+
+    main table tbody tr td:nth-last-child(-n+3) {
+        display: none;
+    }
+}
