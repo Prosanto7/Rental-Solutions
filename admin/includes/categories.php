@@ -1,5 +1,5 @@
 <main>
-    <div class="posts">
+    <div class="styledTable">
         <h2>All Categories</h2>
         <table id="categoryTable">
             <thead>
@@ -15,7 +15,7 @@
         </table>
     </div>
 
-    <div class="posts">
+    <div class="styledTable">
         <h2>All Tags</h2>
         <table id="tagTable">
             <thead>

@@ -16,24 +16,20 @@ themeToggler.addEventListener('click', () => {
 })
 
 function getMode() {
-    var imgSource = document.getElementById('logoImage').src;
-    if (imgSource.indexOf('logo.png') != -1) {
-        return "light";
-    } else {
-        return "dark";
-    }
+    return localStorage.getItem("mode");
 }
 
 function toggleTheme() {
     document.body.classList.toggle('dark-theme-variables');
-
     themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
     themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
 
     if (getMode() == 'light') {
         document.getElementById('logoImage').src = 'images/logo-white.png';
+        localStorage.setItem('mode', 'dark');
     } else {
         document.getElementById('logoImage').src = 'images/logo.png';
+        localStorage.setItem('mode', 'light');
     }
 }
 
@@ -41,11 +37,7 @@ function logout () {
 
 }
 
-var urlParams = new URLSearchParams(window.location.search);
-
-var modeName = urlParams.get('mode');
-
-if (modeName == 'dark') {
+if (getMode() == 'dark') {
     document.body.classList.add('dark-theme-variables');
     themeToggler.querySelector('span:nth-child(1)').classList.remove('active');
     themeToggler.querySelector('span:nth-child(2)').classList.add('active');

@@ -5,9 +5,9 @@
 </style>
 
 <main>
-    <div class="posts">
+    <div class="styledTable posts">
         <h2>All Posts</h2>
-        <table>
+        <table id="postTable">
             <thead>
                 <tr>
                     <th>Post ID</th>

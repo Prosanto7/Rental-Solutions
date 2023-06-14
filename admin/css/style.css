@@ -179,6 +179,7 @@ aside .sidebar a{
     position: relative;
     height: 4rem;
     transition: all 300ms ease;
+    cursor: pointer;
 }
 
 aside .sidebar a span {
@@ -271,16 +272,16 @@ main .insights h3 {
     font-size: 1rem;
 }
 
-main .posts {
+main .styledTable {
     margin-top: 2rem;
 }
 
-main .posts h2 {
+main .styledTable h2 {
     margin-bottom: 1rem;
     text-align: center;
 }
 
-main .posts table {
+main .styledTable table {
     background: var(--color-white);
     width: 100%;
     border-radius: var(--card-border-radius);
@@ -290,7 +291,7 @@ main .posts table {
     transition: all 300ms ease;
 }
 
-main .posts table:hover{
+main .styledTable table:hover{
     box-shadow: var(--box-shadow-dark);
 }
 
@@ -302,7 +303,7 @@ main table tbody td {
     max-width: 10rem;
 }
 
-main .posts a {
+main .styledTable a {
     text-align: center;
     display: block;
     margin: 1rem auto;
@@ -347,7 +348,7 @@ main .posts a {
     border-radius: var(--border-radius-1);
 }
 
-main .posts #categoryTable, #tagTable {
+main .styledTable #categoryTable, #tagTable {
     table-layout: fixed;
     width: 100%;  
 }
@@ -385,7 +386,7 @@ main .posts #categoryTable, #tagTable {
         gap: 0;   
     }
 
-    main .posts h2 {
+    main .styledTable h2 {
         display: none;
     }
 
@@ -397,15 +398,24 @@ main .posts #categoryTable, #tagTable {
         margin: 5rem 0 0 9rem;
     }
 
+    main .styledTable {
+        width: 94%;
+        margin: 5rem 0 0 9rem;
+    }
+
     main .posts table {
         width: 83vw;
     }
 
-    main table thead tr th:nth-last-child(-n+3) {
+    main .styledTable table {
+        min-width: 50vw;
+    }
+
+    main #postTable thead tr th:nth-last-child(-n+3) {
         display: none;
     }
 
-    main table tbody tr td:nth-last-child(-n+3) {
+    main #postTable tbody tr td:nth-last-child(-n+3) {
         display: none;
     }
 }
@@ -468,12 +478,16 @@ main .posts #categoryTable, #tagTable {
         padding: 0 1rem;
     }
 
-    main .posts {
+    main .styledTable {
         margin: 5rem 0 0 0;
         width: 100%;
     }
 
-    main .posts table {
+    main .styledTable h2 {
+        display: block;
+    }
+
+    main .styledTable table {
         width: 100%;
     }
 
@@ -514,5 +528,12 @@ main .posts #categoryTable, #tagTable {
 
     .right .top button span {
         font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    main table tbody td {
+        font-size: 0.8rem;
+        padding: 1rem 0 1rem 0;
     }
 }
