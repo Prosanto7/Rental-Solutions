@@ -12,17 +12,31 @@ closeBtn.addEventListener('click', () => {
 })
 
 themeToggler.addEventListener('click', () => {
+    toggleTheme();
+})
+
+function getMode() {
+    var imgSource = document.getElementById('logoImage').src;
+    if (imgSource.indexOf('logo.png') != -1) {
+        return "light";
+    } else {
+        return "dark";
+    }
+}
+
+function toggleTheme() {
     document.body.classList.toggle('dark-theme-variables');
 
     themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
     themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
 
-    var img = document.getElementById('logoImage').src;
-
-    if (img.indexOf('logo.png') != -1) {
+    if (getMode() == 'light') {
         document.getElementById('logoImage').src = 'images/logo-white.png';
     } else {
         document.getElementById('logoImage').src = 'images/logo.png';
     }
-})
+}
 
+function logout () {
+
+}
