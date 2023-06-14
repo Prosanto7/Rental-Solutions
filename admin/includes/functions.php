@@ -6,6 +6,8 @@
             include("categories.php");
         } else if ($page == "posts") {
             include("posts.php");
+        } else if ($page == "tags") {
+            include("tags.php");
         }
     }
 
