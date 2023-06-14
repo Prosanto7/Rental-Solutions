@@ -61,9 +61,16 @@
                     <?php echo $row["category_name"] ?>
                 </td>
                 <td>
-                    <a href="">
-                        <span class="danger">Delete</span>
-                    </a>
+                    <form action="<?php 
+                        if (isset($_POST["delete"])) {
+                            executeQuery("DELETE FROM categories WHERE category_id = " . $_POST["delete"]);
+                            header("Refresh:0");
+                        }
+                    ?>" method="POST">
+                        <button type="submit" value="<?php echo $row["category_id"] ?>" name="delete">
+                            <span class="danger">Delete</span>
+                        </button>
+                    </form>
                 </td>
             </tr>        
             <?php
@@ -84,12 +91,24 @@
                     <?php echo $row["tag_name"] ?>
                 </td>
                 <td>
-                    <a href="">
-                        <span class="danger">Delete</span>
-                    </a>
+                    <form action="<?php 
+                        if (isset($_POST["delete"])) {
+                            executeQuery("DELETE FROM tags WHERE tag_id = " . $_POST["delete"]);
+                            header("Refresh:0");
+                        }
+                    ?>" method="POST">
+                        <button type="submit" value="<?php echo $row["tag_id"] ?>" name="delete">
+                            <span class="danger">Delete</span>
+                        </button>
+                    </form>
                 </td>
             </tr>        
             <?php
         }
+    }
+
+
+    function addCategory($category) {
+
     }
 ?>

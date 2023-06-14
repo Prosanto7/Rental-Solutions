@@ -234,6 +234,14 @@ main {
     margin-top: 2rem; 
 }
 
+main form input, button{
+    font-family: poppins, sans-serif;
+}
+
+main form input[type=submit], button {
+    cursor: pointer;
+}
+
 main .insights{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -295,6 +303,10 @@ main .styledTable table:hover{
     box-shadow: var(--box-shadow-dark);
 }
 
+main table thead th {
+    font-size: 1rem;
+}
+
 main table tbody td {
     height: 2.8rem;
     border-bottom: 1px solid var(--color-dark-variant);
@@ -303,14 +315,18 @@ main table tbody td {
     max-width: 10rem;
 }
 
-main .styledTable a {
+main table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+main .styledTable button {
     text-align: center;
     display: block;
     margin: 1rem auto;
+    background: none;
     color: var(--color-primary);
     font-weight: bold;
 }
-
 
 .right .top{
     margin-top: 2rem;
@@ -353,6 +369,26 @@ main .styledTable #categoryTable, #tagTable {
     width: 100%;  
 }
 
+main .form input {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px;
+}
+
+main .form input[type=submit] {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
 /* =============== MEDIA QUERIES =============== */
 @media screen and (max-width: 1200px) {
     .container{
@@ -386,10 +422,6 @@ main .styledTable #categoryTable, #tagTable {
         gap: 0;   
     }
 
-    main .styledTable h2 {
-        display: none;
-    }
-
     main .posts {
         width: 94%;
         position: absolute;
@@ -400,7 +432,15 @@ main .styledTable #categoryTable, #tagTable {
 
     main .styledTable {
         width: 94%;
-        margin: 5rem 0 0 9rem;
+        margin: 2rem 0 0 3rem;
+    }
+
+    main .posts {
+        margin: 6rem 0 0 9rem;
+    }
+
+    main .posts h2 {
+        display: none;
     }
 
     main .posts table {
