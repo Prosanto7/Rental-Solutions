@@ -47,4 +47,49 @@
             <?php
         }
     }
+
+    function showCategoryTable() {
+        $allCategories = executeQuery("SELECT * FROM categories");
+
+        while ($row = $allCategories->fetch_assoc()) {
+            ?>
+            <tr>
+                <td>
+                    <?php echo $row["category_id"] ?>
+                </td>
+                <td>
+                    <?php echo $row["category_name"] ?>
+                </td>
+                <td>
+                    <a href="">
+                        <span class="danger">Delete</span>
+                    </a>
+                </td>
+            </tr>        
+            <?php
+        }
+    }
+
+
+    function showTagTable() {
+        $allTags = executeQuery("SELECT * FROM tags");
+
+        while ($row = $allTags->fetch_assoc()) {
+            ?>
+            <tr>
+                <td>
+                    <?php echo $row["tag_id"] ?>
+                </td>
+                <td>
+                    <?php echo $row["tag_name"] ?>
+                </td>
+                <td>
+                    <a href="">
+                        <span class="danger">Delete</span>
+                    </a>
+                </td>
+            </tr>        
+            <?php
+        }
+    }
 ?>
