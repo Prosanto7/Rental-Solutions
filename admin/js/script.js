@@ -40,3 +40,19 @@ function toggleTheme() {
 function logout () {
 
 }
+
+var urlParams = new URLSearchParams(window.location.search);
+
+var modeName = urlParams.get('mode');
+
+if (modeName == 'dark') {
+    document.body.classList.add('dark-theme-variables');
+    themeToggler.querySelector('span:nth-child(1)').classList.remove('active');
+    themeToggler.querySelector('span:nth-child(2)').classList.add('active');
+    document.getElementById('logoImage').src = 'images/logo-white.png';
+} else {
+    document.body.classList.remove('dark-theme-variables');
+    themeToggler.querySelector('span:nth-child(1)').classList.add('active');
+    themeToggler.querySelector('span:nth-child(2)').classList.remove('active');
+    document.getElementById('logoImage').src = 'images/logo.png';
+}
