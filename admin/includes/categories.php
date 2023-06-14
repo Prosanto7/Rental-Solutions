@@ -21,9 +21,30 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php showCategoryTable(); ?>
+            <tbody id="categoryTableBody">
+                <?php //showCategoryTable(); ?>
+
             </tbody>
         </table>
+        <script>
+            $(document).ready(function() {
+                populate();
+                function populate() {
+                    $.ajax({
+                        url:'includes/fetch-category.php',
+                        type:'post',
+                        success:function(data) {
+                            $("#categoryTableBody").html(data);
+                        }
+                    });
+                }
+                
+                $(document).on("click", "#delete", function() {
+                    var id = $(this).data("id");
+                    console.log(id);
+                })
+
+            })
+        </script>
     </div>
 </main>
