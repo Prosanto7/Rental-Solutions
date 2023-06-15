@@ -133,8 +133,16 @@ b{
     color: var(--color-danger);
 }
 
+.bg-danger{
+    background: var(--color-danger);
+}
+
 .success{
     color: var(--color-success);
+}
+
+.bg-success{
+    background: var(--color-success);
 }
 
 .warning{
@@ -179,6 +187,7 @@ aside .sidebar a{
     position: relative;
     height: 4rem;
     transition: all 300ms ease;
+    cursor: pointer;
 }
 
 aside .sidebar a span {
@@ -233,6 +242,14 @@ main {
     margin-top: 2rem; 
 }
 
+main form input, button{
+    font-family: poppins, sans-serif;
+}
+
+main form input[type=submit], button {
+    cursor: pointer;
+}
+
 main .insights{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -271,16 +288,16 @@ main .insights h3 {
     font-size: 1rem;
 }
 
-main .posts {
+main .styledTable {
     margin-top: 2rem;
 }
 
-main .posts h2 {
+main .styledTable h2 {
     margin-bottom: 1rem;
     text-align: center;
 }
 
-main .posts table {
+main .styledTable table {
     background: var(--color-white);
     width: 100%;
     border-radius: var(--card-border-radius);
@@ -288,10 +305,15 @@ main .posts table {
     text-align: center;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+    margin-bottom: 2rem;
 }
 
-main .posts table:hover{
+main .styledTable table:hover{
     box-shadow: var(--box-shadow-dark);
+}
+
+main table thead th {
+    font-size: 1rem;
 }
 
 main table tbody td {
@@ -302,14 +324,22 @@ main table tbody td {
     max-width: 10rem;
 }
 
-main .posts a {
+main .posts table tbody td {
+    padding: 1.5rem 0 1.5rem 0;
+}
+
+main table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+main .styledTable button {
     text-align: center;
     display: block;
     margin: 1rem auto;
-    color: var(--color-primary);
+    background: none;
+    /* color: var(--color-primary); */
     font-weight: bold;
 }
-
 
 .right .top{
     margin-top: 2rem;
@@ -347,6 +377,45 @@ main .posts a {
     border-radius: var(--border-radius-1);
 }
 
+main .styledTable #categoryTable, #tagTable {
+    table-layout: fixed;
+    width: 100%;  
+}
+
+main .form input {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px;
+}
+
+main .form input[type=submit] {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.alert {
+    padding: 20px;
+    color: var(--color-white);
+    position: absolute;
+    right: 5px;
+    top: 5rem;
+    width: 20%;
+}
+
+#alertDiv{
+    display: none;
+}
+
+
 /* =============== MEDIA QUERIES =============== */
 @media screen and (max-width: 1200px) {
     .container{
@@ -380,10 +449,6 @@ main .posts a {
         gap: 0;   
     }
 
-    main .posts h2 {
-        display: none;
-    }
-
     main .posts {
         width: 94%;
         position: absolute;
@@ -392,15 +457,32 @@ main .posts a {
         margin: 5rem 0 0 9rem;
     }
 
+    main .styledTable {
+        width: 94%;
+        margin: 2rem 0 0 3rem;
+    }
+
+    main .posts {
+        margin: 6rem 0 0 9rem;
+    }
+
+    main .posts h2 {
+        display: none;
+    }
+
     main .posts table {
         width: 83vw;
     }
 
-    main table thead tr th:nth-last-child(-n+3) {
+    main .styledTable table {
+        min-width: 50vw;
+    }
+
+    main #postTable thead tr th:nth-last-child(-n+3) {
         display: none;
     }
 
-    main table tbody tr td:nth-last-child(-n+3) {
+    main #postTable tbody tr td:nth-last-child(-n+3) {
         display: none;
     }
 }
@@ -463,12 +545,16 @@ main .posts a {
         padding: 0 1rem;
     }
 
-    main .posts {
+    main .styledTable {
         margin: 5rem 0 0 0;
         width: 100%;
     }
 
-    main .posts table {
+    main .styledTable h2 {
+        display: block;
+    }
+
+    main .styledTable table {
         width: 100%;
     }
 
@@ -509,5 +595,12 @@ main .posts a {
 
     .right .top button span {
         font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    main table tbody td {
+        font-size: 0.8rem;
+        padding: 1rem 0 1rem 0;
     }
 }

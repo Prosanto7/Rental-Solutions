@@ -10,7 +10,7 @@
         </div>
 
         <div class="sidebar">
-            <a onclick="location.href='index.php?page=dashboard&mode='+getMode()" 
+            <a onclick="location.href='index.php?page=dashboard'" 
                 <?php 
                     if($_GET["page"] == "dashboard") {
                         echo "class='active'";
@@ -19,7 +19,7 @@
                 <span class="material-symbols-sharp">grid_view</span>
                 <h3>Dashboard</h3>
             </a>
-            <a onclick="location.href='index.php?page=posts&mode='+getMode()"
+            <a onclick="location.href='index.php?page=posts'"
                 <?php 
                     if($_GET["page"] == "posts") {
                         echo "class='active'";
@@ -29,7 +29,7 @@
                 <h3>Posts</h3>
                 <span class="post-count">26</span>
             </a>
-            <a onclick="location.href='index.php?page=categories&mode='+getMode()"
+            <a onclick="location.href='index.php?page=categories'"
                 <?php 
                     if($_GET["page"] == "categories") {
                         echo "class='active'";
@@ -38,7 +38,7 @@
                 <span class="material-symbols-sharp">category</span>
                 <h3>Categories</h3>
             </a>
-            <a onclick="location.href='index.php?page=tags&mode='+getMode()"
+            <a onclick="location.href='index.php?page=tags'"
                 <?php 
                     if($_GET["page"] == "tags") {
                         echo "class='active'";
@@ -47,7 +47,7 @@
                 <span class="material-symbols-sharp">sell</span>
                 <h3>Tags</h3>
             </a>
-            <a onclick="location.href='index.php?page=users&mode='+getMode()"
+            <a onclick="location.href='index.php?page=users'"
                 <?php 
                     if($_GET["page"] == "users") {
                         echo "class='active'";
@@ -56,7 +56,7 @@
                 <span class="material-symbols-sharp">group</span>
                 <h3>Users</h3>
             </a>
-            <a onclick="location.href='index.php?page=messages&mode='+getMode()"
+            <a onclick="location.href='index.php?page=messages'"
                 <?php 
                     if($_GET["page"] == "messages") {
                         echo "class='active'";
