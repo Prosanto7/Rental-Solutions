@@ -30,6 +30,11 @@
                     e.preventDefault();
 
                     var categoryName = $("#categoryName").val();
+
+                    if (categoryName == "") {
+                        showAlertMessage("Error", "Please enter the category name...");
+                        return;
+                    }
                     
                     $.ajax({
                         url: 'api/insert-category.php',
@@ -38,6 +43,12 @@
                         success: function(data) {
                             populate('api/fetch-category.php', 'post', '#categoryTableBody');
                             $("#categoryForm").trigger("reset");
+
+                            if (data == 1) {
+                                showAlertMessage("Success", "Category added successfully...");
+                            } else {
+                                showAlertMessage("Error", "Category already exists...");
+                            }
                         }
                     });
                 });

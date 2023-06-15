@@ -69,7 +69,29 @@ function deleteRow(delete_url, populate_url, type, htmlID) {
             data:{id: id},
             success:function(data) {
                 populate(populate_url, type, htmlID);
+
+                if (data == 1) {
+                    showAlertMessage("Success", "Data deleted successfully...");
+                } else {
+                    showAlertMessage("Error", "Data could not be deleted.");
+                }
             }
         });
     })
+}
+
+
+function showAlertMessage(alertType, message) {
+    if (alertType == "Error") {
+        $("#alertDiv").addClass("bg-danger");
+        $("#alertDiv").removeClass("bg-success");
+    } else {
+        $("#alertDiv").addClass("bg-success");
+        $("#alertDiv").removeClass("bg-danger");
+    }
+    $("#alertMessage").html("<strong>" + alertType + "!</strong> " + message);
+    $("#alertDiv").show();
+    setTimeout(function() {
+        $('#alertDiv').fadeOut('slow');
+    }, 2000);
 }
