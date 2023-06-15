@@ -30,6 +30,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?page=login">Login</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?page=registration">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?page=admin">Admin</a>
+                    </li>
                 </ul>
             </div>
         </nav>
