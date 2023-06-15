@@ -1,12 +1,5 @@
-<?php
-    require_once('includes/header.php');
-    require_once('includes/functions.php');
-    require_once('includes/navigation.php');
-
-    $row = executeQuery("SELECT * FROM posts where post_id = " . $_GET["id"])->fetch_assoc();
-?>
-
-    <main>
+	<?php $row = executeQuery("SELECT * FROM posts where post_id = " . $_GET["id"])->fetch_assoc(); ?>
+	<main>
 		<section class="section">
 			<div class="container">
 				<div class="row">
@@ -41,7 +34,7 @@
 										<h2 class="section-title mb-3">Similar Posts</h2>
 										<div class="widget-body">
 											<div class="widget-list">
-                                            <?php showSimilarPosts(); ?>
+                                            	<?php showSimilarPosts(); ?>
 											</div>
 										</div>
 									</div>
@@ -63,8 +56,3 @@
 			</div>
 		</section>
 	</main>
-
-
-<?php    
-    require_once('includes/footer.php');
-?>

@@ -28,7 +28,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact</a>
+                        <a class="nav-link" href="index.php?page=login">Login</a>
                     </li>
                 </ul>
             </div>

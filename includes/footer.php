@@ -8,7 +8,7 @@
                     </div>
                 </div>
             </div>
-            <div class="copyright bg-dark content">Designed &amp; Developed By <a href="https://github.com/Prosanto7">Prosanto Deb</a></div>
+            <div class="copyright bg-dark content">Designed &amp; Developed By <a href="index.php?page=contact">Prosanto Deb</a></div>
         </footer>
 
 
