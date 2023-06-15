@@ -8,6 +8,8 @@
             include("posts.php");
         } else if ($page == "tags") {
             include("tags.php");
+        } else {
+            include("main-section.php");
         }
     }
 
