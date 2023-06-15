@@ -8,7 +8,7 @@
         $data.="<tr>";
         $data.="<td>".$row["category_id"]."</td>";
         $data.="<td>".$row["category_name"]."</td>";
-        $data.="<td><button type='button' id='delete' data-id=" . $row["category_id"] .">Delete</button></td>";
+        $data.="<td><button class='danger' type='button' id='delete' data-id=" . $row["category_id"] .">Delete</button></td>";
         $data.="</tr>";
     }
 

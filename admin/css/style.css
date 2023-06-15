@@ -332,7 +332,7 @@ main .styledTable button {
     display: block;
     margin: 1rem auto;
     background: none;
-    color: var(--color-primary);
+    /* color: var(--color-primary); */
     font-weight: bold;
 }
 
