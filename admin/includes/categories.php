@@ -28,23 +28,9 @@
         </table>
         <script>
             $(document).ready(function() {
-                populate();
-                function populate() {
-                    $.ajax({
-                        url:'includes/fetch-category.php',
-                        type:'post',
-                        success:function(data) {
-                            $("#categoryTableBody").html(data);
-                        }
-                    });
-                }
-                
-                $(document).on("click", "#delete", function() {
-                    var id = $(this).data("id");
-                    console.log(id);
-                })
-
-            })
+                populate('api/fetch-category.php', 'post', '#categoryTableBody');
+                deleteRow('api/delete-category.php', 'api/fetch-category.php', 'post', '#categoryTableBody');
+            });
         </script>
     </div>
 </main>

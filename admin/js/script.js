@@ -48,3 +48,28 @@ if (getMode() == 'dark') {
     themeToggler.querySelector('span:nth-child(2)').classList.remove('active');
     document.getElementById('logoImage').src = 'images/logo.png';
 }
+
+function populate(url, type, id) {
+    $.ajax({
+        url: url,
+        type: type,
+        success:function(data) {
+            $(id).html(data);
+        }
+    });
+}
+
+function deleteRow(delete_url, type, htmlID, populate_url) {
+    $(document).on("click", "#delete", function() {
+        var id = $(this).data("id");
+        
+        $.ajax({
+            url: delete_url,
+            type: type,
+            data:{id: id},
+            success:function(data) {
+                populate(populate_url, type, htmlID);
+            }
+        });
+    })
+}
