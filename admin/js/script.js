@@ -59,7 +59,7 @@ function populate(url, type, id) {
     });
 }
 
-function deleteRow(delete_url, type, htmlID, populate_url) {
+function deleteRow(delete_url, populate_url, type, htmlID) {
     $(document).on("click", "#delete", function() {
         var id = $(this).data("id");
         
