@@ -33,6 +33,8 @@
             include ("views/registration.php");
         } else if ($page == "admin") {
             include ("views/admin-login.php");
+        } else if ($page == "create-post") {
+            include ("views/create-post.php");
         }
     }
 

@@ -22,6 +22,9 @@
 
         <!-- # Main Style Sheet -->
         <link rel="stylesheet" href="css/style.css">
+
+        <!-- # JS Plugins -->
+        <script src="plugins/jquery/jquery.min.js"></script>
     </head>
 
     <body>
