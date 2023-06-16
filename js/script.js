@@ -18,12 +18,8 @@ function showAlertMessage(alertType, message) {
     }
     $("#alertMessage").html("<strong>" + alertType + "!</strong> " + message);
     $("#alertDiv").show();
-    topssss();
+    window.scrollTo({top: 0, behavior: 'smooth'});
     setTimeout(function() {
         $('#alertDiv').fadeOut('slow');
     }, 2000);
-}
-
-function topssss() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
 }

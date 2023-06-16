@@ -1,6 +1,7 @@
 <?php 
     require_once('../includes/functions.php');
 
+    date_default_timezone_set("Asia/Dhaka");
     $postDate = date("Y-m-d H:i:s");
     $imageName = date("YmdHis");
 
