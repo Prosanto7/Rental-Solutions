@@ -2,7 +2,6 @@
     <div class="container">
         <h2 class="text-center mt-5">Create Post</h2>
         <form autocomplete="off" class="form" method="POST" enctype="multipart/form-data" id="postForm">
-            
             <label class="form-label mt-3">Post Title</label>
             <input type="text" class="form-control" placeholder="Enter your post title..." name="post_title" id="postTitle">
             
@@ -36,6 +35,21 @@
                 $(document).on("click", "#create", function(e) {
                     e.preventDefault();
 
+                    if ($("#postTitle").val() == "") {
+                        showAlertMessage("Error", "Please enter the post title...");
+                        return;
+                    } 
+
+                    if ($("#postTags").val() == "") {
+                        showAlertMessage("Error", "Please enter the post tags...");
+                        return;
+                    } 
+
+                    if ($("#postContent").val() == "") {
+                        showAlertMessage("Error", "Please enter the post content...");
+                        return;
+                    } 
+
                     var form = new FormData(document.getElementById('postForm'));
                     //append files
                     var file = document.getElementById('postImage').files[0];
@@ -51,11 +65,11 @@
                         contentType: false, //must, tell jQuery not to process the data
                         processData: false,
                         success: function(data) {
-                            // if (data == 1) {
-                            //     alert("Post added successfully...");
-                            // } else {
-                            //     alert("Post could not be added...");
-                            // }
+                            if (data == 1) {
+                                showAlertMessage("Success", "Post added successfully...");
+                            } else {
+                                showAlertMessage("Error", "Post could not be added...");
+                            }
                         }
                     });
                 });
