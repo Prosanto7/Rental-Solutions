@@ -20,6 +20,22 @@
         }
     }
 
+    function setCenterView($page) {
+        if ($page == "home" || $page == "") {
+            include ("views/main-section.php");
+        } else if ($page == "login") {
+            include ("views/login.php");
+        } else if ($page == "post") {
+            include ("views/post.php");
+        } else if ($page == "contact") {
+            include ("views/contact.php");
+        } else if ($page == "registration") {
+            include ("views/registration.php");
+        } else if ($page == "admin") {
+            include ("views/admin-login.php");
+        }
+    }
+
     function showHomePagePosts($searchKeyword) {
         if ($searchKeyword == "") {
             $allPosts = executeQuery("SELECT * FROM posts LIMIT 8");
@@ -70,7 +86,7 @@
         ?>
             <div class="col-md-6 mb-4">
                 <article class="card article-card article-card-sm h-100">
-                    <a href="post.php?id=<?php echo $row["post_id"]; ?>">
+                    <a href="index.php?page=post&id=<?php echo $row["post_id"]; ?>">
                         <div class="card-image">
                             <div class="post-info"> <span class="text-uppercase"><?php echo getFormattedDate($row["post_date"]) ?></span>
                                 <span class="text-uppercase"><?php echo showTimeDifference($row["post_date"]) ?> ago</span>
@@ -83,11 +99,11 @@
                             <?php showTags($row["post_tags"]) ?>
                         </ul>
                         <h2>
-                            <a class="post-title" href="post.php?id=<?php echo $row["post_id"]; ?>"><?php echo $row["post_title"] ?></a>
+                            <a class="post-title" href="index.php?page=post&id=<?php echo $row["post_id"]; ?>"><?php echo $row["post_title"] ?></a>
                         </h2>
                         <p class="card-text" style="max-height:100px; overflow:hidden"><?php echo $row["post_content"] ?></p>
                         <div class="content"> 
-                            <a class="read-more-btn" href="post.php?id=<?php echo $row["post_id"]; ?>">See Full Post</a>
+                            <a class="read-more-btn" href="index.php?page=post&id=<?php echo $row["post_id"]; ?>">See Full Post</a>
                         </div>
                     </div>
                 </article>
@@ -100,7 +116,7 @@
          
         while ($row = $similarPosts->fetch_assoc()) {
             ?>
-				<a class="media align-items-center" href="post.php?id=<?php echo $row["post_id"]; ?>">
+				<a class="media align-items-center" href="index.php?page=post&id=<?php echo $row["post_id"]; ?>">
 					<img loading="lazy" decoding="async" src="images/post/<?php echo $row["post_image"]; ?>"
 									alt="Post Thumbnail" class="w-100">
 					<div class="media-body ml-3">
