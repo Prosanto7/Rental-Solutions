@@ -1,9 +1,24 @@
+<?php 
+    $pageTitle = "Create";
+    $action = "created";
+
+    if ($_GET["page"] == "edit-post") {
+        $row = executeQuery("SELECT * from posts WHERE post_id = " . $_GET["id"])->fetch_assoc();
+        $pageTitle = "Edit";
+        $action = "edited";
+    }
+?>
 <main>
     <div class="container">
-        <h2 class="text-center mt-5">Create Post</h2>
+        <h2 class="text-center mt-5"><?php echo $pageTitle ?> Post</h2>
         <form autocomplete="off" class="form" method="POST" enctype="multipart/form-data" id="postForm">
             <label class="form-label mt-3">Post Title</label>
-            <input type="text" class="form-control" placeholder="Enter your post title..." name="post_title" id="postTitle">
+            <input type="text" class="form-control" placeholder="Enter your post title..." name="post_title" id="postTitle" 
+            <?php 
+                if (isset($_GET["id"])) {
+                    echo "value='{$row['post_title']}'";
+                }
+            ?>>
             
             <div class="input-group mt-3">
                 <label>Post Category</label>
@@ -16,10 +31,22 @@
             <input type="file" class="form-control" name="post_image" id="postImage">
             
             <label class="form-label mt-3">Post Tags</label>
-            <input type="text" class="form-control" placeholder="Enter your post tags seperated by comma" name="post_tags" id="postTags">
+            <input type="text" class="form-control" placeholder="Enter your post tags seperated by comma" name="post_tags" id="postTags"
+            
+            <?php 
+                if (isset($_GET["id"])) {
+                    echo "value='{$row['post_tags']}'";
+                }
+            ?>>
             
             <label class="form-label mt-3">Post Content</label>
-            <textarea class="form-control" placeholder="Enter your post content" name="post_content" id="postContent" cols="30" rows="10"></textarea>
+            <textarea class="form-control" placeholder="Enter your post content" name="post_content" id="postContent" cols="30" rows="10">
+            <?php 
+                if (isset($_GET["id"])) {
+                    echo "{$row['post_content']}";
+                }
+            ?>
+            </textarea>
             
             <input class="btn btn-primary mt-3" type="submit" name="create_post" id="create" value="Publish Post">
         </form>
@@ -58,6 +85,7 @@
                     }
 
                     $.ajax({
+                        
                         url: 'api/create-post.php',
                         type: 'post',
                         data: form,
@@ -66,9 +94,9 @@
                         processData: false,
                         success: function(data) {
                             if (data == 1) {
-                                showAlertMessage("Success", "Post added successfully...");
+                                showAlertMessage("Success", "Post <?php $action ?> successfully...");
                             } else {
-                                showAlertMessage("Error", "Post could not be added...");
+                                showAlertMessage("Error", "Post could not be <?php $action ?>...");
                             }
                         }
                     });
