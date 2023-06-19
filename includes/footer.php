@@ -11,9 +11,13 @@
             <div class="copyright bg-dark content">Designed &amp; Developed By <a href="index.php?page=contact">Prosanto Deb</a></div>
         </footer>
 
+        <div class="alert" id="alertDiv">
+            <span id="alertMessage">                
+            </span>
+        </div>
+
 
         <!-- # JS Plugins -->
-        <script src="plugins/jquery/jquery.min.js"></script>
         <script src="plugins/bootstrap/bootstrap.min.js"></script>
 
         <!-- Main Script -->

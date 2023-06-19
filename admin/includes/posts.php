@@ -20,9 +20,15 @@
                     <th>See Details</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php showPostTable(); ?>
+            <tbody id="postTableBody">
+                
             </tbody>
         </table>
+        <script>
+            $(document).ready(function() {
+                populate('api/fetch-post.php', 'post', '#postTableBody');
+                deleteRow('api/delete-post.php', 'api/fetch-post.php', 'post', '#postTableBody');
+            });
+        </script>
     </div>
 </main>

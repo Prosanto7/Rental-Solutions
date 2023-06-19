@@ -27,15 +27,21 @@
                             <?php showAllCategories() ?>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=registration">Registration</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=admin">Admin</a>
-                    </li>
+                    <?php if (isset($_SESSION["user"])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=registration">Registration</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=admin">Admin</a>
+                        </li>
+                    <?php } else {?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=create-post">Create Post</a>
+                        </li>
+                    <?php }?>
                 </ul>
             </div>
         </nav>

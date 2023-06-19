@@ -11,11 +11,15 @@
 								<li class="mr-3">
 									<img src="images/date.png" alt="Date" width="20px"> <span><?php echo getFormattedDate($row["post_date"]) ?></span>
 								</li>
-                                <li>
+                                <li class="mr-3">
 									<img src="images/time.png" alt="Date" width="20px"> <span><?php echo showTimeDifference($row["post_date"]) ?> ago</span>
+								</li>
+								<li>
+									<img src="images/category.png" alt="Category" width="20px"> <span><?php echo getCategoryByID($row["post_category_id"]) ?></span>
 								</li>
 							</ul>
 							<h1 class="my-3"><?php echo $row["post_title"] ?></h1>
+
 							<ul class="post-meta mb-4">
                                 <?php showTags($row["post_tags"]) ?>
 							</ul>

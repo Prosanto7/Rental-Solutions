@@ -9,14 +9,14 @@
     function showAllCategories() {
         $allTags = executeQuery("SELECT * FROM categories");
         while ($row = $allTags->fetch_assoc()) {
-            echo "<a class='dropdown-item' href=''>" . $row["category_name"] . "</a>";
+            echo "<a class='dropdown-item' href='index.php?page=home&category={$row["category_id"]}'>" . $row["category_name"] . "</a>";
         }
     }
 
     function showAllTags() {
         $allTags = executeQuery("SELECT * FROM tags");
         while ($row = $allTags->fetch_assoc()) {
-            echo "<li><a href=''>" . $row["tag_name"] . "</a></li>";
+            echo "<li><a href='index.php?page=home&tag={$row["tag_name"]}'>" . $row["tag_name"] . "</a></li>";
         }
     }
 
@@ -33,14 +33,20 @@
             include ("views/registration.php");
         } else if ($page == "admin") {
             include ("views/admin-login.php");
-        }
+        } else if ($page == "create-post" || $page == "edit-post") {
+            include ("views/post-handler.php");
+        } 
     }
 
-    function showHomePagePosts($searchKeyword) {
-        if ($searchKeyword == "") {
-            $allPosts = executeQuery("SELECT * FROM posts LIMIT 8");
-        } else {
-            $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$searchKeyword%' OR post_title LIKE '%$searchKeyword%'");
+    function showHomePagePosts($keyword, $type) {
+        if ($type == "none") {
+            $allPosts = executeQuery("SELECT * FROM posts");
+        } else if ($type == "search") {
+            $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$keyword%' OR post_title LIKE '%$keyword%'");
+        } else if ($type == "category") {
+            $allPosts = executeQuery("SELECT * FROM posts WHERE post_category_id = " . $keyword);
+        } else if ($type == "tag") {
+            $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$keyword%'");
         }
         
         while ($row = $allPosts->fetch_assoc()) {
@@ -126,5 +132,9 @@
 				</a>
             <?php 
         }                         
+    }
+
+    function getCategoryByID($id) {
+        return executeQuery("SELECT category_name from categories WHERE category_id = " . $id)->fetch_assoc()["category_name"];
     }
 ?>

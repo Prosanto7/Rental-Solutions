@@ -45,7 +45,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../post.php?id=<?php echo $row["post_id"] ?>">See Details</a>
+                        <a href="../index.php?page=post&id=<?php echo $row["post_id"] ?>">See Details</a>
                     </td>
                 </tr>
             <?php
