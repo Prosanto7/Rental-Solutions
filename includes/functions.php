@@ -16,7 +16,7 @@
     function showAllTags() {
         $allTags = executeQuery("SELECT * FROM tags");
         while ($row = $allTags->fetch_assoc()) {
-            echo "<li><a href=''>" . $row["tag_name"] . "</a></li>";
+            echo "<li><a href='index.php?page=home&tag={$row["tag_name"]}'>" . $row["tag_name"] . "</a></li>";
         }
     }
 
@@ -45,6 +45,8 @@
             $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$keyword%' OR post_title LIKE '%$keyword%'");
         } else if ($type == "category") {
             $allPosts = executeQuery("SELECT * FROM posts WHERE post_category_id = " . $keyword);
+        } else if ($type == "tag") {
+            $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$keyword%'");
         }
         
         while ($row = $allPosts->fetch_assoc()) {

@@ -12,6 +12,8 @@
                   showHomePagePosts($_POST["searchKeyword"], "search");
                 } else if (isset($_GET["category"])) {
                   showHomePagePosts($_GET["category"], "category");
+                } else if (isset($_GET["tag"])) {
+                  showHomePagePosts($_GET["tag"], "tag");
                 } else {
                   showHomePagePosts("", "none");
                 }
