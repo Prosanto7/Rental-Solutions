@@ -129,4 +129,8 @@
             <?php 
         }                         
     }
+
+    function getCategoryByID($id) {
+        return executeQuery("SELECT category_name from categories WHERE category_id = " . $id)->fetch_assoc()["category_name"];
+    }
 ?>
