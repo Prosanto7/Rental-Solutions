@@ -1,11 +1,13 @@
 <?php 
     $pageTitle = "Create";
     $action = "created";
+    $url = "create-post.php";
 
     if ($_GET["page"] == "edit-post") {
         $row = executeQuery("SELECT * from posts WHERE post_id = " . $_GET["id"])->fetch_assoc();
         $pageTitle = "Edit";
         $action = "edited";
+        $url = "update-post.php?id=". $_GET["id"];
     }
 ?>
 <main>
@@ -28,7 +30,13 @@
             </div>
 
             <label class="form-label mt-3">Post Image</label>
-            <input type="file" class="form-control" name="post_image" id="postImage">
+            <input type="file" class="form-control" name="post_image" id="postImage"
+            
+            <?php 
+                if (isset($_GET["id"])) {
+                    echo "value='{$row['post_image']}'";
+                }
+            ?>>
             
             <label class="form-label mt-3">Post Tags</label>
             <input type="text" class="form-control" placeholder="Enter your post tags seperated by comma" name="post_tags" id="postTags"
@@ -85,18 +93,18 @@
                     }
 
                     $.ajax({
-                        
-                        url: 'api/create-post.php',
+                        url: 'api/<?php echo $url ?>',
                         type: 'post',
                         data: form,
                         cache: false,
                         contentType: false, //must, tell jQuery not to process the data
                         processData: false,
                         success: function(data) {
+                            console.log(data);
                             if (data == 1) {
-                                showAlertMessage("Success", "Post <?php $action ?> successfully...");
+                                showAlertMessage("Success", "Post <?php echo $action ?> successfully...");
                             } else {
-                                showAlertMessage("Error", "Post could not be <?php $action ?>...");
+                                showAlertMessage("Error", "Post could not be <?php echo $action ?>...");
                             }
                         }
                     });
