@@ -9,7 +9,7 @@
     function showAllCategories() {
         $allTags = executeQuery("SELECT * FROM categories");
         while ($row = $allTags->fetch_assoc()) {
-            echo "<a class='dropdown-item' href=''>" . $row["category_name"] . "</a>";
+            echo "<a class='dropdown-item' href='index.php?page=home&category={$row["category_id"]}'>" . $row["category_name"] . "</a>";
         }
     }
 
@@ -38,11 +38,13 @@
         } 
     }
 
-    function showHomePagePosts($searchKeyword) {
-        if ($searchKeyword == "") {
-            $allPosts = executeQuery("SELECT * FROM posts LIMIT 8");
-        } else {
-            $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$searchKeyword%' OR post_title LIKE '%$searchKeyword%'");
+    function showHomePagePosts($keyword, $type) {
+        if ($type == "none") {
+            $allPosts = executeQuery("SELECT * FROM posts");
+        } else if ($type == "search") {
+            $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$keyword%' OR post_title LIKE '%$keyword%'");
+        } else if ($type == "category") {
+            $allPosts = executeQuery("SELECT * FROM posts WHERE post_category_id = " . $keyword);
         }
         
         while ($row = $allPosts->fetch_assoc()) {

@@ -9,9 +9,11 @@
             <div class="row">
               <?php 
                 if (isset($_POST["searchKeyword"])) {
-                  showHomePagePosts($_POST["searchKeyword"]);
+                  showHomePagePosts($_POST["searchKeyword"], "search");
+                } else if (isset($_GET["category"])) {
+                  showHomePagePosts($_GET["category"], "category");
                 } else {
-                  showHomePagePosts("");
+                  showHomePagePosts("", "none");
                 }
               ?>
             </div>
