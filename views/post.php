@@ -33,56 +33,51 @@
 						<h2>Comments</h2>
 						<div class="card">
 							<div class="card-body" id="commentSection">
-								<div>
-									<h3 class="text-primary mb-1">Lily Coleman</h3>
-									<p class="text-muted small mb-0">
-										Shared publicly - Jan 2020
-									</p>
-								</div>
-
-								<p class="mt-3 mb-4 pb-2">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip consequat.
-								</p>
-
-								
-
-								<div>
-									<h3 class="text-primary mb-1">Lily Coleman</h3>
-									<p class="text-muted small mb-0">
-										Shared publicly - Jan 2020
-									</p>
-								</div>
-
-								<p class="mt-3 mb-4 pb-2">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip consequat.
-								</p>
-
-								<div class="ml-5">
-									<p> <b class="text-primary">Author:</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem expedita culpa similique quos at ipsum voluptatum molestias cupiditate recusandae explicabo, assumenda aliquam eveniet doloribus dolores deleniti tenetur, quidem corporis eius?</p>
-								</div>
+								<!-- Will be loaded using JQuery -->
 							</div>
 
 							<div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
 								<div class="d-flex flex-start w-100">
 									<div class="form-outline w-100">
-										<textarea class="form-control" id="textAreaExample" rows="4" style="background: #fff;"></textarea>
+										<textarea class="form-control" id="textArea" rows="4" style="background: #fff;"></textarea>
 									</div>
 								</div>
 								<div class="float-end mt-2 pt-1">
-									<button type="button" class="btn btn-primary btn-sm">Post comment</button>
-									<button type="button" class="btn btn-outline-primary btn-sm">Cancel</button>
+									<button type="button" id="postCommentButton" class="btn btn-primary btn-sm">Post comment</button>
+									<button type="button" id="cancelButton" class="btn btn-outline-primary btn-sm">Cancel</button>
 								</div>
 							</div>
 						</div>
 					</section>
 					<script>
 						$(document).ready(function() {
-                            populate('api/fetch-comment-for-a-post.php?id=<?php echo $_GET["id"] ?>', 'post', '#commentSection');
-                        });
+							populate('api/fetch-comment-for-a-post.php?id=<?php echo $_GET["id"] ?>', 'post', '#commentSection');
+
+							$(document).on("click", "#cancelButton", function(e) {
+								$('textarea').val('');
+							});
+
+							$(document).on("click", "#postCommentButton", function(e) {
+								var comment = $("textArea").val();
+
+								if (comment == "") {
+									showAlertMessage("Error", "Please enter some comments...");
+									return;
+								}
+
+								$.ajax({
+									url: 'api/insert-comment.php?id=<?php echo $_GET["id"] ?>',
+									type: 'post',
+									data: {
+										comment: comment
+									},
+									success: function(data) {
+										populate('api/fetch-comment-for-a-post.php?id=<?php echo $_GET["id"] ?>', 'post', '#commentSection');
+										$("textarea").trigger("reset");
+									}
+								});
+							});
+						});
 					</script>
 				</div>
 
