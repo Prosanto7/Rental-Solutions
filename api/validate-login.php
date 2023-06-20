@@ -1,7 +1,10 @@
 <?php 
     require_once('../includes/functions.php');
 
-    $loginData = executeQuery("SELECT * FROM users WHERE username = '" . $_POST["user_name"] . "' AND user_password = '" . $_POST["user_password"] ."'");
+    $username = real_escape($_POST['user_name']);
+    $password = real_escape($_POST['user_password']);
+
+    $loginData = executeQuery("SELECT * FROM users WHERE BINARY username = '" . $username . "' AND user_password = '" . $password."'");
    
     if ($loginData->num_rows == 1) {
         echo 1;

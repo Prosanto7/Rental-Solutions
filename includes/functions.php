@@ -6,6 +6,11 @@
         return $connection->query($sql);
     }
 
+    function real_escape($input) {
+        global $connection;
+        return $connection->real_escape_string($input);
+    }
+
     function showAllCategories() {
         $allTags = executeQuery("SELECT * FROM categories");
         while ($row = $allTags->fetch_assoc()) {
