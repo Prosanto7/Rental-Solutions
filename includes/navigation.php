@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <header class="navigation">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light px-0">
@@ -27,7 +28,7 @@
                             <?php showAllCategories() ?>
                         </div>
                     </li>
-                    <?php if (isset($_SESSION["user"])) { ?>
+                    <?php if (!isset($_SESSION["user_id"])) { ?>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=login">Login</a>
                         </li>

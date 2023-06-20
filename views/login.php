@@ -24,6 +24,7 @@
                         success: function(data) {
                             if (data == 1) {
                                 showAlertMessage("Success", "Welcome to Rental Solutions");
+                                window.location.href = "index.php";
                             } else {
                                 showAlertMessage("Error", "Please enter valid user name and password...");
                             }
