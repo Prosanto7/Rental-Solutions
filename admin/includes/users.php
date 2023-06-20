@@ -1,5 +1,11 @@
+<style>
+    .container {
+        grid-template-columns: 15rem auto 8rem;
+    }
+</style>
+
 <main>
-<div class="styledTable">
+    <div class="styledTable">
         <h2>All Users</h2>
         <table id="userTable">
             <thead>
@@ -18,7 +24,7 @@
         </table>
         <script>
             $(document).ready(function() {
-                
+                populate('api/fetch-user.php', 'post', '#userTableBody');
             });
         </script>
     </div>
