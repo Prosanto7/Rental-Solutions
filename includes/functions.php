@@ -31,8 +31,6 @@
             include ("views/contact.php");
         } else if ($page == "registration") {
             include ("views/registration.php");
-        } else if ($page == "admin") {
-            include ("views/admin-login.php");
         } else if ($page == "create-post" || $page == "edit-post") {
             include ("views/post-handler.php");
         } else if ($page == "comments") {
