@@ -41,6 +41,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=create-post">Create Post</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=comments">Comments</a>
+                        </li>
                     <?php }?>
                 </ul>
             </div>
