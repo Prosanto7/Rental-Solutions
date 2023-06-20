@@ -25,6 +25,7 @@
         <script>
             $(document).ready(function() {
                 populate('api/fetch-user.php', 'post', '#userTableBody');
+                deleteRow('api/delete-user.php', 'api/fetch-user.php', 'post', '#userTableBody');
             });
         </script>
     </div>
