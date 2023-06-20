@@ -5,7 +5,7 @@
 </style>
 
 <main>
-    <div class="styledTable">
+    <div class="styledTable posts">
         <h2>All Users</h2>
         <table id="userTable">
             <thead>
@@ -15,6 +15,9 @@
                     <th>User First Name</th>
                     <th>User Last Name</th>
                     <th>User Email</th>
+                    <th>User Date of Birth</th>
+                    <th>User Present Address</th>
+                    <th>User Contact Info</th>
                     <th>Action</th>
                 </tr>
             </thead>
