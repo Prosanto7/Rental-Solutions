@@ -26,7 +26,7 @@
                     </table>  
                     <script>
                         $(document).ready(function() {
-                            populate('api/fetch-comment.php', 'post', '#commentTableBody');
+                            populate('api/fetch-all-comments.php', 'post', '#commentTableBody');
                         });
                     </script>  
                 </div>

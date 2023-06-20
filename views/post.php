@@ -32,7 +32,7 @@
 					<section class="mt-5">
 						<h2>Comments</h2>
 						<div class="card">
-							<div class="card-body">
+							<div class="card-body" id="commentSection">
 								<div>
 									<h3 class="text-primary mb-1">Lily Coleman</h3>
 									<p class="text-muted small mb-0">
@@ -79,6 +79,11 @@
 							</div>
 						</div>
 					</section>
+					<script>
+						$(document).ready(function() {
+                            populate('api/fetch-comment-for-a-post.php?id=<?php echo $_GET["id"] ?>', 'post', '#commentSection');
+                        });
+					</script>
 				</div>
 
 				<div class="col-lg-4">
