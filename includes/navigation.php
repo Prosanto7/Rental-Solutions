@@ -47,6 +47,11 @@
                                 <a class='dropdown-item' href='index.php?page=comments'>See comments</a>
                             </div>
                         </li>
+                        <?php if (isset($_SESSION["admin"])) { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php?page=admin">Admin</a>
+                            </li>
+                        <?php } ?>
                         <li class="nav-item">
                             <a class="nav-link" href="api/logout.php">Logout</a>
                         </li>

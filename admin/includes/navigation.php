@@ -65,6 +65,10 @@
                 <span class="material-symbols-sharp">mail</span>
                 <h3>Messages</h3>
             </a>
+            <a href="../index.php">
+                <span class="material-symbols-sharp">web</span>
+                <h3>See website</h3>
+            </a>
             <a href="api/logout.php">
                 <span class="material-symbols-sharp">logout</span>
                 <h3>Log Out</h3>
