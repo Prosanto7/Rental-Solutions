@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <header class="navigation">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light px-0">

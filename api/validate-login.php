@@ -11,6 +11,10 @@
     if ($loginData->num_rows == 1) {
         $row = $loginData->fetch_assoc();
         $_SESSION["user_id"] = $row["user_id"];
+        $_SESSION["username"] = $row["username"];
+        $_SESSION["user_first_name"] = $row["user_first_name"];
+        $_SESSION["user_last_name"] = $row["user_last_name"];
+        $_SESSION["user_email"] = $row["user_email"];
         echo 1;
     } else {
         echo 0;
