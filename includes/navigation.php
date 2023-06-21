@@ -44,7 +44,8 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class='dropdown-item' href='index.php?page=create-post'>Create a post</a>
-                                <a class='dropdown-item' href='index.php?page=comments'>See comments</a>
+                                <a class='dropdown-item' href='index.php?page=comments'>See Comments</a>
+                                <a class='dropdown-item' href='index.php?page=profile'>See Profile</a>
                             </div>
                         </li>
                         <?php if (isset($_SESSION["admin"])) { ?>

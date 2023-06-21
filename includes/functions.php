@@ -36,8 +36,8 @@
             include ("views/post.php");
         } else if ($page == "contact") {
             include ("views/contact.php");
-        } else if ($page == "registration") {
-            include ("views/registration.php");
+        } else if ($page == "registration" || $page == "profile") {
+            include ("views/user-handler.php");
         } else if ($page == "create-post" || $page == "edit-post") {
             include ("views/post-handler.php");
         } else if ($page == "comments") {
