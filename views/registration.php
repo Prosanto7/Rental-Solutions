@@ -83,11 +83,10 @@
                         processData: false,
                         contentType: false,
                         success: function(data) {
-                            console.log(data);
                             if (data == 1) {
                                 showAlertMessage("Success", "Registration completed! Please login now");
                             } else {
-                                showAlertMessage("Error", "Registration failed...");
+                                showAlertMessage("Error", "Username or email already exists...");
                             }
                         }
                     });

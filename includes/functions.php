@@ -6,6 +6,11 @@
         return $connection->query($sql);
     }
 
+    function real_escape($input) {
+        global $connection;
+        return $connection->real_escape_string($input);
+    }
+
     function showAllCategories() {
         $allTags = executeQuery("SELECT * FROM categories");
         while ($row = $allTags->fetch_assoc()) {
@@ -25,14 +30,14 @@
             include ("views/main-section.php");
         } else if ($page == "login") {
             include ("views/login.php");
+        } else if ($page == "admin") {
+            include ("views/admin-login.php");
         } else if ($page == "post") {
             include ("views/post.php");
         } else if ($page == "contact") {
             include ("views/contact.php");
         } else if ($page == "registration") {
             include ("views/registration.php");
-        } else if ($page == "admin") {
-            include ("views/admin-login.php");
         } else if ($page == "create-post" || $page == "edit-post") {
             include ("views/post-handler.php");
         } else if ($page == "comments") {
