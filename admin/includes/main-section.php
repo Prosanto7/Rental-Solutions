@@ -1,7 +1,7 @@
 <main>
     <h1>Dashboard</h1>
     <div class="insights">
-        <div class="approved-posts">
+        <div class="approved-posts" onclick="location.href='index.php?page=posts#approvedPostTable'">
             <span class="material-symbols-sharp">check_circle</span>
             <div class="middle">
                 <div class="left">
@@ -11,7 +11,7 @@
             </div>
         </div> 
 
-        <div class="pending-posts">
+        <div class="pending-posts" onclick="location.href='index.php?page=posts'"> 
             <span class="material-symbols-sharp">hourglass_top</span>
             <div class="middle">
                 <div class="left">
@@ -21,7 +21,7 @@
             </div>
         </div> 
 
-        <div class="total-users">
+        <div class="total-users" onclick="location.href='index.php?page=users'">
             <span class="material-symbols-sharp">groups</span>
             <div class="middle">
                 <div class="left">
@@ -41,7 +41,7 @@
             </div>
         </div> 
 
-        <div class="post-ratio">
+        <div class="post-ratio" onclick="location.href='index.php?page=categories'">
             <span class="material-symbols-sharp">category</span>
             <div class="middle">
                 <div class="left">
@@ -51,7 +51,7 @@
             </div>
         </div> 
 
-        <div class="post-ratio">
+        <div class="post-ratio" onclick="location.href='index.php?page=tags'">
             <span class="material-symbols-sharp">sell</span>
             <div class="middle">
                 <div class="left">
