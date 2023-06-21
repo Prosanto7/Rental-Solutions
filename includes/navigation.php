@@ -23,13 +23,40 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categories
                         </a>
-                        <div class="dropdown-menu"> 
+                        <div class="dropdown-menu">
                             <?php showAllCategories() ?>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact</a>
-                    </li>
+                    <?php if (!isset($_SESSION["user_id"])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=registration">Registration</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=admin">Admin</a>
+                        </li>
+                    <?php } else { ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                User Actions
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class='dropdown-item' href='index.php?page=create-post'>Create a post</a>
+                                <a class='dropdown-item' href='index.php?page=comments'>See Comments</a>
+                                <a class='dropdown-item' href='index.php?page=profile'>See Profile</a>
+                            </div>
+                        </li>
+                        <?php if (isset($_SESSION["admin"])) { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php?page=admin">Admin</a>
+                            </li>
+                        <?php } ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="api/logout.php">Logout</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </nav>

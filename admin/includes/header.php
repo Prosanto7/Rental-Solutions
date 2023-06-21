@@ -1,3 +1,12 @@
+<?php ob_start(); ?>
+<?php session_start(); ?>
+
+<?php 
+    if (!isset($_SESSION["admin"])) {
+        header("Location: ../index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

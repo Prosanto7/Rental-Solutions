@@ -1,3 +1,6 @@
+<?php ob_start(); ?>
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 
 <html lang="en-us">
@@ -22,6 +25,9 @@
 
         <!-- # Main Style Sheet -->
         <link rel="stylesheet" href="css/style.css">
+
+        <!-- # JS Plugins -->
+        <script src="plugins/jquery/jquery.min.js"></script>
     </head>
 
     <body>

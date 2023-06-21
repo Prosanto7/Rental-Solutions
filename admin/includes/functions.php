@@ -8,6 +8,8 @@
             include("posts.php");
         } else if ($page == "tags") {
             include("tags.php");
+        } else if ($page == "users") {
+            include("users.php");
         } else {
             include("main-section.php");
         }
@@ -45,7 +47,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../post.php?id=<?php echo $row["post_id"] ?>">See Details</a>
+                        <a href="../index.php?page=post&id=<?php echo $row["post_id"] ?>">See Details</a>
                     </td>
                 </tr>
             <?php
