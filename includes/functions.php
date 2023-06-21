@@ -30,6 +30,8 @@
             include ("views/main-section.php");
         } else if ($page == "login") {
             include ("views/login.php");
+        } else if ($page == "admin") {
+            include ("views/admin-login.php");
         } else if ($page == "post") {
             include ("views/post.php");
         } else if ($page == "contact") {
