@@ -11,12 +11,12 @@
             </div>
         </div> 
 
-        <div class="post-ratio">
-            <span class="material-symbols-sharp">safety_divider</span>
+        <div class="pending-posts">
+            <span class="material-symbols-sharp">hourglass_top</span>
             <div class="middle">
                 <div class="left">
-                    <h3>User/Post Ratio</h3>
-                    <h1>34%</h1>
+                    <h3>Pending Posts</h3>
+                    <h1><?php echo executeQuery("SELECT * FROM `posts` WHERE post_status = 'draft'")->num_rows ?></h1>
                 </div>
             </div>
         </div> 
@@ -31,12 +31,32 @@
             </div>
         </div> 
 
-        <div class="total-posts">
-            <span class="material-symbols-sharp">summarize</span>
+        <div class="post-ratio">
+            <span class="material-symbols-sharp">comment</span>
             <div class="middle">
                 <div class="left">
-                    <h3>Total Posts</h3>
-                    <h1><?php echo executeQuery("SELECT * FROM `posts`")->num_rows ?></h1>
+                    <h3>Total Comments</h3>
+                    <h1><?php echo executeQuery("SELECT * FROM `comments`")->num_rows ?></h1>
+                </div>
+            </div>
+        </div> 
+
+        <div class="post-ratio">
+            <span class="material-symbols-sharp">category</span>
+            <div class="middle">
+                <div class="left">
+                    <h3>Total Categories</h3>
+                    <h1><?php echo executeQuery("SELECT * FROM `categories`")->num_rows ?></h1>
+                </div>
+            </div>
+        </div> 
+
+        <div class="post-ratio">
+            <span class="material-symbols-sharp">sell</span>
+            <div class="middle">
+                <div class="left">
+                    <h3>Total Tags</h3>
+                    <h1><?php echo executeQuery("SELECT * FROM `tags`")->num_rows ?></h1>
                 </div>
             </div>
         </div> 

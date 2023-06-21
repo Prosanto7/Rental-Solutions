@@ -254,6 +254,7 @@ main .insights{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.6rem;
+    margin-bottom: 5rem;
 }
 
 main .insights > div {
