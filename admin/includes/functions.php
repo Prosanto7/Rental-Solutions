@@ -127,9 +127,4 @@
             <?php
         }
     }
-
-
-    function addCategory($category) {
-
-    }
 ?>

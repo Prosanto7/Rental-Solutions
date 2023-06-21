@@ -6,7 +6,7 @@
             <div class="middle">
                 <div class="left">
                     <h3>Approved Posts</h3>
-                    <h1>34</h1>
+                    <h1><?php echo executeQuery("SELECT * FROM `posts` WHERE post_status = 'approved'")->num_rows ?></h1>
                 </div>
             </div>
         </div> 
@@ -26,7 +26,7 @@
             <div class="middle">
                 <div class="left">
                     <h3>Total Users</h3>
-                    <h1>60</h1>
+                    <h1><?php echo executeQuery("SELECT * FROM `users`")->num_rows ?></h1>
                 </div>
             </div>
         </div> 
@@ -36,7 +36,7 @@
             <div class="middle">
                 <div class="left">
                     <h3>Total Posts</h3>
-                    <h1>20</h1>
+                    <h1><?php echo executeQuery("SELECT * FROM `posts`")->num_rows ?></h1>
                 </div>
             </div>
         </div> 
