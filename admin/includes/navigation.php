@@ -65,7 +65,7 @@
                 <span class="material-symbols-sharp">mail</span>
                 <h3>Messages</h3>
             </a>
-            <a href="../">
+            <a href="api/logout.php">
                 <span class="material-symbols-sharp">logout</span>
                 <h3>Log Out</h3>
             </a>

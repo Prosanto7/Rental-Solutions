@@ -23,7 +23,7 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categories
                         </a>
-                        <div class="dropdown-menu"> 
+                        <div class="dropdown-menu">
                             <?php showAllCategories() ?>
                         </div>
                     </li>
@@ -37,14 +37,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=admin">Admin</a>
                         </li>
-                    <?php } else {?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=create-post">Create Post</a>
+                    <?php } else { ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                User Actions
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class='dropdown-item' href='index.php?page=create-post'>Create a post</a>
+                                <a class='dropdown-item' href='index.php?page=comments'>See comments</a>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=comments">Comments</a>
+                            <a class="nav-link" href="api/logout.php">Logout</a>
                         </li>
-                    <?php }?>
+                    <?php } ?>
                 </ul>
             </div>
         </nav>

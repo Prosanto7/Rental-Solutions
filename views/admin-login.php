@@ -1,3 +1,8 @@
+<?php 
+    if (isset($_SESSION["admin"])) {
+        header("Location: admin/index.php");
+    }
+?>
 <main>
     <div class="container">
         <h2 class="text-center mt-5">Admin Login</h2>
