@@ -36,6 +36,7 @@
 								<!-- Will be loaded using JQuery -->
 							</div>
 
+							<?php if(isset($_SESSION["user_id"])) { ?>
 							<div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
 								<div class="d-flex flex-start w-100">
 									<div class="form-outline w-100">
@@ -47,8 +48,10 @@
 									<button type="button" id="cancelButton" class="btn btn-outline-primary btn-sm">Cancel</button>
 								</div>
 							</div>
+							<?php } ?>
 						</div>
 					</section>
+					
 					<script>
 						$(document).ready(function() {
 							populate('api/fetch-comment-for-a-post.php?id=<?php echo $_GET["id"] ?>', 'post', '#commentSection');
