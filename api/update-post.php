@@ -19,7 +19,7 @@
         $query .= ", `post_image` = '{$new_image_name}'";
     }
 
-    $query .= ", `post_content` = '{$_POST["post_content"]}'";
+    $query .= ", `post_content` = '{$_POST["editor_data"]}'";
     $query .= ", `post_tags` = '{$_POST["post_tags"]}'";
     $query .= " WHERE `posts`.`post_id` = " . $_GET["id"];
     

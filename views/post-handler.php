@@ -2,12 +2,14 @@
     $pageTitle = "Create";
     $action = "created";
     $url = "create-post.php";
+    $button = "Publish";
 
     if ($_GET["page"] == "edit-post") {
         $row = executeQuery("SELECT * from posts WHERE post_id = " . $_GET["id"])->fetch_assoc();
         $pageTitle = "Edit";
         $action = "edited";
         $url = "update-post.php?id=". $_GET["id"];
+        $button = "Update";
     }
 ?>
                 
@@ -57,7 +59,7 @@
             ?>
             </textarea>
             
-            <input class="btn btn-primary mt-3" type="submit" name="create_post" id="create" value="Publish Post">
+            <input class="btn btn-primary mt-3" type="submit" name="create_post" id="create" value="<?php echo $button ?> Post">
         </form>
 
         <div>
@@ -89,9 +91,14 @@
                     var form = new FormData(document.getElementById('postForm'));
                     //append files
                     var file = document.getElementById('postImage').files[0];
+
+                    console.log(editor.getData());
+
                     if (file) {   
                         form.append('postImage', file);
                     }
+
+                    form.append('editor_data', editor.getData());
 
                     $.ajax({
                         url: 'api/<?php echo $url ?>',
@@ -104,6 +111,10 @@
                             console.log(data);
                             if (data == 1) {
                                 showAlertMessage("Success", "Post <?php echo $action ?> successfully...");
+                                setTimeout(
+                                    function() {
+                                        window.location.href = "index.php?page=user-posts";
+                                    }, 1500);
                             } else {
                                 showAlertMessage("Error", "Post could not be <?php echo $action ?>...");
                             }
@@ -114,11 +125,16 @@
         </script>
 
         <script>
+        $(document).ready(function() {
             ClassicEditor
                 .create( document.querySelector( '#postContent' ) )
+                .then( newEditor => {
+                    editor = newEditor;
+                } )
                 .catch( error => {
                     console.error( error );
                 } );
+            });
         </script>
     </div>
 </main>
