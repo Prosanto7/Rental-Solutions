@@ -8,6 +8,8 @@
             include("posts.php");
         } else if ($page == "tags") {
             include("tags.php");
+        } else if ($page == "users") {
+            include("users.php");
         } else {
             include("main-section.php");
         }
@@ -124,10 +126,5 @@
             </tr>        
             <?php
         }
-    }
-
-
-    function addCategory($category) {
-
     }
 ?>

@@ -27,7 +27,13 @@
                 ?>>
                 <span class="material-symbols-sharp">post</span>
                 <h3>Posts</h3>
-                <span class="post-count">26</span>
+                <span class="post-count" style="color:white" id="postCount"> 
+                </span>
+                <script>
+                    $(document).ready(function() {
+                        populate('api/fetch-post-count.php?status=draft', 'post', '#postCount');
+                    });
+                </script>
             </a>
             <a onclick="location.href='index.php?page=categories'"
                 <?php 
@@ -65,7 +71,11 @@
                 <span class="material-symbols-sharp">mail</span>
                 <h3>Messages</h3>
             </a>
-            <a href="../">
+            <a href="../index.php">
+                <span class="material-symbols-sharp">web</span>
+                <h3>See website</h3>
+            </a>
+            <a href="api/logout.php">
                 <span class="material-symbols-sharp">logout</span>
                 <h3>Log Out</h3>
             </a>
