@@ -91,9 +91,14 @@
                     var form = new FormData(document.getElementById('postForm'));
                     //append files
                     var file = document.getElementById('postImage').files[0];
+
+                    console.log(editor.getData());
+
                     if (file) {   
                         form.append('postImage', file);
                     }
+
+                    form.append('editor_data', editor.getData());
 
                     $.ajax({
                         url: 'api/<?php echo $url ?>',
@@ -116,11 +121,16 @@
         </script>
 
         <script>
+        $(document).ready(function() {
             ClassicEditor
                 .create( document.querySelector( '#postContent' ) )
+                .then( newEditor => {
+                    editor = newEditor;
+                } )
                 .catch( error => {
                     console.error( error );
                 } );
+            });
         </script>
     </div>
 </main>
