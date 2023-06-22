@@ -111,6 +111,10 @@
                             console.log(data);
                             if (data == 1) {
                                 showAlertMessage("Success", "Post <?php echo $action ?> successfully...");
+                                setTimeout(
+                                    function() {
+                                        window.location.href = "index.php?page=user-posts";
+                                    }, 1500);
                             } else {
                                 showAlertMessage("Error", "Post could not be <?php echo $action ?>...");
                             }

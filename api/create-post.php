@@ -17,7 +17,7 @@
         $new_image_name = "";
     }
 
-    $query = "INSERT INTO `posts` (`post_id`, `user_id`, `post_category_id`, `post_title`, `post_author`, `post_date`, `post_image`, `post_content`, `post_tags`, `post_comment_count`, `post_status`) VALUES (NULL, '" . $_SESSION["user_id"] . "', '" . $_POST["post_category_id"] . "', '" . $_POST["post_title"] . "', '', '" . $postDate . "', '" . $new_image_name . "', '" . $_POST["editor_data"] . "', '" . $_POST["post_tags"] . "', '0', 'draft')";
+    $query = "INSERT INTO `posts` (`post_id`, `user_id`, `post_category_id`, `post_title`, `post_author`, `post_date`, `post_image`, `post_content`, `post_tags`, `post_comment_count`, `post_status`) VALUES (NULL, '" . $_SESSION["user_id"] . "', '" . $_POST["post_category_id"] . "', '" . $_POST["post_title"] . "', '" . $_SESSION["user_first_name"] . " " . $_SESSION["user_last_name"] . "', '" . $postDate . "', '" . $new_image_name . "', '" . $_POST["editor_data"] . "', '" . $_POST["post_tags"] . "', '0', 'draft')";
     
     try {
         executeQuery($query);
