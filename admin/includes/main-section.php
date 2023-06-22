@@ -1,7 +1,7 @@
 <main>
     <h1>Dashboard</h1>
     <div class="insights">
-        <div class="approved-posts" onclick="location.href='index.php?page=posts#approvedPostTable'">
+        <div class="approved-posts" onclick="location.href='index.php?page=posts&elementID=approvedPostTable'">
             <span class="material-symbols-sharp">check_circle</span>
             <div class="middle">
                 <div class="left">

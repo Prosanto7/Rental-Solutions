@@ -28,6 +28,29 @@
             $(document).ready(function() {
                 populate('api/fetch-post.php?status=draft', 'post', '#pendingPostTableBody');
                 deleteRow('api/delete-post.php', 'api/fetch-post.php?status=draft', 'post', '#pendingPostTableBody');
+
+                $(document).on("click", "#approve", function() {
+                    var id = $(this).data("id");
+
+                    $.ajax({
+                        url: 'api/approve-post.php',
+                        type: 'post',
+                        data: {
+                            id: id
+                        },
+                        success: function(data) {
+                            populate('api/fetch-post.php?status=approved', 'post', '#approvedPostTableBody');
+                            populate('api/fetch-post.php?status=draft', 'post', '#pendingPostTableBody');
+                            populate('api/fetch-post-count.php?status=draft', 'post', '#postCount');
+
+                            if (data == 1) {
+                                showAlertMessage("Success", "Post approved successfully...");
+                            } else {
+                                showAlertMessage("Error", "Post could not be approved.");
+                            }
+                        }
+                    });
+                })
             });
         </script>
     </div>
@@ -50,31 +73,21 @@
 
             </tbody>
         </table>
+        
         <script>
             $(document).ready(function() {
+                var id = window.location.href.split('&elementID=')[1];
+            
+                var element = $('#' + id);
+                
+                if (element.length > 0) {
+                    $('html, body').animate({
+                        scrollTop: element.offset().top + 500
+                    }, 1000);
+                }
+
                 populate('api/fetch-post.php?status=approved', 'post', '#approvedPostTableBody');
                 deleteRow('api/delete-post.php', 'api/fetch-post.php?status=approved', 'post', '#approvedPostTableBody');
-                $(document).on("click", "#approve", function() {
-                    var id = $(this).data("id");
-
-                    $.ajax({
-                        url: 'api/approve-post.php',
-                        type: 'post',
-                        data: {
-                            id: id
-                        },
-                        success: function(data) {
-                            populate('api/fetch-post.php?status=approved', 'post', '#approvedPostTableBody');
-                            populate('api/fetch-post.php?status=draft', 'post', '#pendingPostTableBody');
-
-                            if (data == 1) {
-                                showAlertMessage("Success", "Post approved successfully...");
-                            } else {
-                                showAlertMessage("Error", "Post could not be approved.");
-                            }
-                        }
-                    });
-                })
             });
         </script>
     </div>
