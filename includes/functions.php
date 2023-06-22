@@ -136,7 +136,7 @@
 									alt="Post Thumbnail" class="w-100">
 					<div class="media-body ml-3">
                     <h3 style="margin-top:-5px"><?php echo $row["post_title"]; ?></h3>
-                    <p class="mb-0 small" style="max-height: 60px; overflow:hidden"><?php echo $row["post_content"]; ?></p>
+                    <p class="mb-0 small" style="max-height: 60px; overflow:hidden"><?php echo substr($row["post_content"], 0, 100) ?></p>
 					</div>
 				</a>
             <?php 

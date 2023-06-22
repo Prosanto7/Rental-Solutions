@@ -10,7 +10,7 @@
                 <div class="col-12">
                     <table class="table table-hover">
                         <thead>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <th>Post ID</th>
                                 <th>Date & Time</th>
                                 <th>Title</th>
@@ -18,7 +18,7 @@
                                 <th>Tags</th>
                                 <th>Content</th>
                                 <th>Status</th>
-                                <th colspan="2">Actions</th>
+                                <th colspan="3">Actions</th>
                             </tr>
                         </thead>
                         <tbody id="userPostTableBody">
@@ -28,6 +28,8 @@
                     <script>
                         $(document).ready(function() {
                             populate('api/fetch-all-posts.php', 'post', '#userPostTableBody');
+                            deleteRow('api/delete-post.php', 'api/fetch-all-posts.php', 'post', '#userPostTableBody');
+
                         });
                     </script>  
                 </div>

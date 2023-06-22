@@ -15,7 +15,8 @@
         $data.="<td>". substr($row["post_content"], 0, 25)."...</td>";
         $data.="<td>".$row["post_status"]."</td>";
         $data.="<td><a href='index.php?page=edit-post&id={$row["post_id"]}'>Edit Post</a></td>";
-        $data.="<td><button class='danger' type='button' id='delete' data-id=" . $row["post_id"] .">Delete</button></td>";    
+        $data.="<td><a href='index.php?page=post&id={$row["post_id"]}'>See Details</a></td>"; 
+        $data.="<td><button class='btn btn-danger' type='button' id='delete' data-id=" . $row["post_id"] .">Delete</button></td>";   
         $data.="</tr>";
     }
 
