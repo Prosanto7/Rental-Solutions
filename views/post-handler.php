@@ -2,12 +2,14 @@
     $pageTitle = "Create";
     $action = "created";
     $url = "create-post.php";
+    $button = "Publish";
 
     if ($_GET["page"] == "edit-post") {
         $row = executeQuery("SELECT * from posts WHERE post_id = " . $_GET["id"])->fetch_assoc();
         $pageTitle = "Edit";
         $action = "edited";
         $url = "update-post.php?id=". $_GET["id"];
+        $button = "Update";
     }
 ?>
                 
@@ -57,7 +59,7 @@
             ?>
             </textarea>
             
-            <input class="btn btn-primary mt-3" type="submit" name="create_post" id="create" value="Publish Post">
+            <input class="btn btn-primary mt-3" type="submit" name="create_post" id="create" value="<?php echo $button ?> Post">
         </form>
 
         <div>
