@@ -26,7 +26,7 @@
 
     try {
         executeQuery($query);
-        echo 1;
+        echo $_GET["id"];
     } catch (Exception $e) {
         echo 0;
     }

@@ -11,6 +11,11 @@
         return $connection->real_escape_string($input);
     }
 
+    function getLastID() {
+        global $connection;
+        return mysqli_insert_id($connection);
+    }
+
     function showAllCategories() {
         $allTags = executeQuery("SELECT * FROM categories");
         while ($row = $allTags->fetch_assoc()) {

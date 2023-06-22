@@ -21,7 +21,7 @@
     
     try {
         executeQuery($query);
-        echo 1;
+        echo getLastID();
     } catch (Exception $e) {
         echo 0;
     }
