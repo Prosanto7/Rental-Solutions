@@ -10,6 +10,7 @@
         $url = "update-post.php?id=". $_GET["id"];
     }
 ?>
+                
 <main>
     <div class="container">
         <h2 class="text-center mt-5"><?php echo $pageTitle ?> Post</h2>
@@ -110,6 +111,14 @@
                     });
                 });
             });
+        </script>
+
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#postContent' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
         </script>
     </div>
 </main>

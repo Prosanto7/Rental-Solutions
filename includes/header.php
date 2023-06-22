@@ -28,6 +28,9 @@
 
         <!-- # JS Plugins -->
         <script src="plugins/jquery/jquery.min.js"></script>
+
+        <!-- Text Editor -->
+        <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
     </head>
 
     <body>
