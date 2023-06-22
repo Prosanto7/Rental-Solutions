@@ -27,7 +27,13 @@
                 ?>>
                 <span class="material-symbols-sharp">post</span>
                 <h3>Posts</h3>
-                <span class="post-count">26</span>
+                <span class="post-count" style="color:white" id="postCount"> 
+                </span>
+                <script>
+                    $(document).ready(function() {
+                        populate('api/fetch-post-count.php?status=draft', 'post', '#postCount');
+                    });
+                </script>
             </a>
             <a onclick="location.href='index.php?page=categories'"
                 <?php 

@@ -254,6 +254,7 @@ main .insights{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.6rem;
+    margin-bottom: 5rem;
 }
 
 main .insights > div {
@@ -326,7 +327,7 @@ main table tbody td {
 
 main .posts table tbody td {
     padding: 1.5rem 0 1.5rem 0;
-    overflow: scroll;
+    overflow: auto;
 }
 
 main table tbody tr:last-child td {
