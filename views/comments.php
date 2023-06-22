@@ -8,6 +8,7 @@
                     </div>
                 </div>
                 <div class="col-12">
+                    <h2 class="text-center mb-5">Other's Comments</h2>
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -26,7 +27,30 @@
                     </table>  
                     <script>
                         $(document).ready(function() {
-                            populate('api/fetch-all-comments.php', 'post', '#commentTableBody');
+                            populate('api/fetch-all-comments.php?type=other', 'post', '#commentTableBody');
+                        });
+                    </script>  
+                </div>
+
+                <div class="col-12">
+                    <h2 class="text-center mb-5">My Comments</h2>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Comment ID</th>
+                                <th>Post ID</th>
+                                <th>Date & Time</th>
+                                <th>Content</th>
+                                <th>See Post</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ownCommentTableBody">
+                            
+                        </tbody>
+                    </table>  
+                    <script>
+                        $(document).ready(function() {
+                            populate('api/fetch-all-comments.php?type=own', 'post', '#ownCommentTableBody');
                         });
                     </script>  
                 </div>

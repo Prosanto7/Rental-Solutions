@@ -1,7 +1,14 @@
+<?php session_start(); ?>
 <?php 
     require_once('../includes/functions.php');
 
-    $allComments = executeQuery("SELECT * FROM comments");
+    if ($_GET["type"] == "own") {
+        $allComments = executeQuery("SELECT * FROM `comments` WHERE user_id = " . $_SESSION["user_id"]);
+    } else {
+        $allComments = executeQuery("SELECT * FROM `comments` WHERE comments.comment_post_id in (
+            SELECT posts.post_id FROM `posts` WHERE posts.user_id = " . $_SESSION["user_id"] . ") AND comments.user_id != " . $_SESSION["user_id"]);
+    }
+    
     $data = "";
 
     while ($row = $allComments->fetch_assoc()) {
