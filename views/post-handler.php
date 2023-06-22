@@ -3,6 +3,7 @@
     $action = "created";
     $url = "create-post.php";
     $button = "Publish";
+    $redirectURL = "index.php?page=user-posts";
 
     if ($_GET["page"] == "edit-post") {
         $row = executeQuery("SELECT * from posts WHERE post_id = " . $_GET["id"])->fetch_assoc();
@@ -10,6 +11,7 @@
         $action = "edited";
         $url = "update-post.php?id=". $_GET["id"];
         $button = "Update";
+        $redirectURL = "index.php?page=post&id=". $_GET["id"];
     }
 ?>
                 
@@ -113,7 +115,7 @@
                                 showAlertMessage("Success", "Post <?php echo $action ?> successfully...");
                                 setTimeout(
                                     function() {
-                                        window.location.href = "index.php?page=user-posts";
+                                        window.location.href = "<?php echo $redirectURL ?> ";
                                     }, 1500);
                             } else {
                                 showAlertMessage("Error", "Post could not be <?php echo $action ?>...");
