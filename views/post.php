@@ -55,6 +55,7 @@
 					<script>
 						$(document).ready(function() {
 							populate('api/fetch-comment-for-a-post.php?id=<?php echo $_GET["id"] ?>', 'post', '#commentSection');
+							deleteRow('api/delete-comment.php', 'api/fetch-comment-for-a-post.php?id=<?php echo $_GET["id"] ?>', 'post', '#commentSection');
 
 							$(document).on("click", "#cancelButton", function(e) {
 								$('textarea').val('');
