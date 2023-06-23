@@ -6,7 +6,7 @@
     $username = real_escape($_POST['user_name']);
     $password = real_escape($_POST['user_password']);
 
-    $loginData = executeQuery("SELECT * FROM users WHERE BINARY username = '" . $username . "' AND user_password = '" . $password."'");
+    $loginData = executeQuery("SELECT * FROM users WHERE BINARY username = '" . $username . "' AND user_password = '" . crypt($password, '$2y$10$iusesomecrazystrings22')."'");
    
     if ($loginData->num_rows == 1) {
         $row = $loginData->fetch_assoc();
