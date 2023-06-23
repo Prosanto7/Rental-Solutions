@@ -38,6 +38,8 @@
                                 } else {
                                     echo "<option value='".$categoryRow["category_id"]."'>". $categoryRow["category_name"] ."</option>";
                                 }
+                            } else {
+                                echo "<option value='".$categoryRow["category_id"]."'>". $categoryRow["category_name"] ."</option>";
                             }
                         }
                     

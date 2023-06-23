@@ -1,4 +1,7 @@
-<?php $row = executeQuery("SELECT * FROM posts where post_id = " . $_GET["id"])->fetch_assoc(); ?>
+<?php 
+	executeQuery("UPDATE posts SET post_visited_times = post_visited_times + 1 where post_id = " . $_GET["id"]);
+	$row = executeQuery("SELECT * FROM posts where post_id = " . $_GET["id"])->fetch_assoc(); 
+?>
 
 <main>
 	<section class="section">
@@ -14,8 +17,14 @@
 							<li class="mr-3">
 								<img src="images/time.png" alt="Date" width="20px"> <span><?php echo showTimeDifference($row["post_date"]) ?> ago</span>
 							</li>
-							<li>
+							<li class="mr-3">
 								<img src="images/category.png" alt="Category" width="20px"> <span><?php echo getCategoryByID($row["post_category_id"]) ?></span>
+							</li>
+							<li class="mr-3">
+								<img src="images/user.png" alt="Category" width="20px"> <span><?php echo $row["post_author"] ?></span>
+							</li>
+							<li>
+								<img src="images/visited.png" alt="Category" width="20px"> <span> Visited <?php echo $row["post_visited_times"] ?> Times</span>
 							</li>
 						</ul>
 						<h1 class="my-3"><?php echo $row["post_title"] ?></h1>
