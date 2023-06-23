@@ -27,6 +27,16 @@
 						<div class="content text-left">
 							<p><?php echo $row["post_content"] ?></p>
 						</div>
+						<?php 
+							if (isset($_SESSION["user_id"])) {
+								if ($row["user_id"] == $_SESSION["user_id"]) {
+									echo "<div class='mt-3 d-flex justify-content-end' style='gap:20px'>";
+									echo "<a href='index.php?page=edit-post&id={$row["post_id"]}'> <img src='images/edit.png' alt='Edit Post' style='width:35px'> </a>";
+									echo "<a href='index.php?page=user-posts'> <img src='images/delete.png' alt='Delete Post' style='width:35px'> </a>";
+									echo "</div>";
+								}
+							}
+						?>
 					</article>
 
 					<section class="mt-5">

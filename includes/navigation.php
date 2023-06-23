@@ -44,7 +44,7 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class='dropdown-item' href='index.php?page=create-post'>Create a post</a>
-                                <a class='dropdown-item' href='index.php?page=user-posts'>See Posts</a>
+                                <a class='dropdown-item' href='index.php?page=user-posts'>All Posts</a>
                                 <a class='dropdown-item' href='index.php?page=comments'>See Comments</a>
                                 <a class='dropdown-item' href='index.php?page=profile'>See Profile</a>
                             </div>
