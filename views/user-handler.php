@@ -73,7 +73,7 @@
                 }
             ?>>
 
-            <label class="form-label mt-3">Password</label>
+            <label class="form-label mt-3"><?php if (isset($_SESSION["user_id"])) { echo "Encrypted"; } ?> Password</label>
             <input type="password" class="form-control" placeholder="Enter password..." name="user_password" id="userPassword"
             <?php 
                 if (isset($_SESSION["user_id"])) {

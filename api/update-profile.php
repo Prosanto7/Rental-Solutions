@@ -7,7 +7,7 @@
     $query .= ", `user_date_of_birth` = '{$_POST["date_of_birth"]}'";
     $query .= ", `user_present_address` = '{$_POST["present_address"]}'";
     $query .= ", `user_contact_number` = '{$_POST["contact_number"]}'";
-    $query .= ", `user_password` = '{$_POST["user_password"]}'";
+    $query .= ", `user_password` = '". crypt(real_escape($_POST["user_password"]), '$2y$10$iusesomecrazystrings22') ."'";
     $query .= " WHERE `users`.`user_id` = " . $_SESSION["user_id"];
     
     try {
