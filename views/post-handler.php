@@ -28,10 +28,23 @@
             <div class="input-group mt-3">
                 <label>Post Category</label>
                 <select class="form-control" id="postCategories" name='post_category_id'>
-                    <!-- Will Be Loaded using JQuery -->
+                    <?php 
+                        $allCategories = executeQuery("SELECT * FROM categories");
+                    
+                        while ($categoryRow = $allCategories->fetch_assoc()) {
+                            if (isset($_GET["id"])) {
+                                if ($row["post_category_id"] == $categoryRow["category_id"]) {
+                                    echo "<option value='".$categoryRow["category_id"]."' selected>". $categoryRow["category_name"] ."</option>";
+                                } else {
+                                    echo "<option value='".$categoryRow["category_id"]."'>". $categoryRow["category_name"] ."</option>";
+                                }
+                            }
+                        }
+                    
+                    ?>
                 </select>
             </div>
-
+            
             <label class="form-label mt-3">Post Image</label>
             <input type="file" class="form-control" name="post_image" id="postImage"
             
@@ -68,8 +81,6 @@
 
         <script>
             $(document).ready(function() {
-                populate('api/fetch-category.php', 'post', '#postCategories');
-
                 $(document).on("click", "#create", function(e) {
                     e.preventDefault();
 
