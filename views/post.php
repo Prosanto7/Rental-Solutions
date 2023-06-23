@@ -36,19 +36,25 @@
 						<div class="content text-left">
 							<p><?php echo $row["post_content"] ?></p>
 						</div>
+
 						<?php 
 							if (isset($_SESSION["user_id"])) {
+								echo "<div class='mt-3 d-flex justify-content-end' style='gap:20px'>";
 								if ($row["user_id"] == $_SESSION["user_id"]) {
-									echo "<div class='mt-3 d-flex justify-content-end' style='gap:20px'>";
 									echo "<a href='index.php?page=edit-post&id={$row["post_id"]}'> <img src='images/edit.png' alt='Edit Post' style='width:35px'> </a>";
 									echo "<a href='index.php?page=user-posts'> <img src='images/delete.png' alt='Delete Post' style='width:35px'> </a>";
-									echo "</div>";
-								}
+									
+								} 
+								echo "<div data-href='https://erayhan.000webhostapp.com/index.php?page=post&amp;id={$_GET['id']}' data-layout='' data-size=''><a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ferayhan.000webhostapp.com%2Findex.php%3Fpage%3Dpost%26id%3D{$_GET['id']}&amp;src=sdkprepars' class='fb-xfbml-parse-ignore'>
+								<img src='images/facebook.png' alt='Share on Facebook' style='width:35px'></a></div>";
+								//echo "<a target='_blank' href='https://www.facebook.com/sharer.php?u=https://erayhan.000webhostapp.com'>  </a>";
+								//echo "https://www.facebook.com/sharer.php?u=https://erayhan.000webhostapp.com/index.php?page=post&amp;id=";
+								echo "</div>";
 							}
 						?>
 					</article>
 
-					<section class="mt-5">
+					<section class="mt-3">
 						<h2>Comments</h2>
 						<div class="card">
 							<?php if(isset($_SESSION["user_id"])) { ?>

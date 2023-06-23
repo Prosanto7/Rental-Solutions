@@ -14,12 +14,12 @@
 							With user-friendly search options, and dedicated support, your rental experience will be seamless and enjoyable. <br><br> Please contact with me for any kind of support and let me help you find your ideal home sweet home.
 							<div class="mt-5">
 								<p class="h3 mb-3 font-weight-normal">
-									<a class="text-dark" href="mailto:prosanto2514@student.nstu.edu.bd">prosanto2514@student.nstu.edu.bd</a>
+									
 								</p>
 								<p class="mb-3">
-									<a class="text-dark" href="tel:&#43;01793222825">&#43;01793222825</a>
+									
 								</p>
-								<p class="mb-2">32/1, North Mourail, Brahmanbaria</p>
+								<p class="mb-2"></p>
 							</div>
 						</div>
 					</div>
