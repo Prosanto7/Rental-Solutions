@@ -47,7 +47,11 @@
             <?php 
               global $postCount;
               for ($i = 1; $i <= $postCount; $i++) {
-                echo "<li class='page-item'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
+                if ((isset($_GET["no"]) && $i == $_GET["no"]) || $i == 1){
+                  echo "<li class='page-item active'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
+                } else {
+                  echo "<li class='page-item'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
+                }
               }
             ?>
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
