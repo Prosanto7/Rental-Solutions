@@ -1,5 +1,7 @@
 <?php require_once('db.php'); ?>
 
+<?php $postCount = 0; ?>
+
 <?php
     function executeQuery($sql) {
         global $connection;
@@ -62,6 +64,9 @@
         } else if ($type == "tag") {
             $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$keyword%'");
         }
+
+        global $postCount;
+        $postCount = ceil($allPosts->num_rows / 6);
         
         while ($row = $allPosts->fetch_assoc()) {
             showSinglePost($row);
