@@ -14,8 +14,10 @@
               showHomePagePosts($_GET["category"], "category");
             } else if (isset($_GET["tag"])) {
               showHomePagePosts($_GET["tag"], "tag");
+            } else if (isset($_GET["no"])) {
+              showHomePagePosts($_GET["no"], "pageNo");
             } else {
-              showHomePagePosts("", "none");
+              showHomePagePosts(1, "pageNo");
             }
             ?>
           </div>
@@ -45,7 +47,7 @@
             <?php 
               global $postCount;
               for ($i = 1; $i <= $postCount; $i++) {
-                echo "<li class='page-item'><a class='page-link' href='index.php?page={$i}'>{$i}</a></li>";
+                echo "<li class='page-item'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
               }
             ?>
             <li class="page-item"><a class="page-link" href="#">Next</a></li>

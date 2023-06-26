@@ -1,6 +1,6 @@
 <?php require_once('db.php'); ?>
 
-<?php $postCount = 0; ?>
+<?php $postCount = 0; $pageStartPosition = 0; ?>
 
 <?php
     function executeQuery($sql) {
@@ -33,7 +33,7 @@
     }
 
     function setCenterView($page) {
-        if ($page == "home" || $page == "") {
+        if ($page == "home") {
             include ("views/main-section.php");
         } else if ($page == "login") {
             include ("views/login.php");
@@ -51,22 +51,36 @@
             include ("views/post-handler.php");
         } else if ($page == "comments") {
             include ("views/comments.php");
-        } 
+        } else {
+            include ("views/main-section.php");
+        }
     }
 
     function showHomePagePosts($keyword, $type) {
-        if ($type == "none") {
-            $allPosts = executeQuery("SELECT * FROM posts");
-        } else if ($type == "search") {
-            $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$keyword%' OR post_title LIKE '%$keyword%'");
-        } else if ($type == "category") {
-            $allPosts = executeQuery("SELECT * FROM posts WHERE post_category_id = " . $keyword);
-        } else if ($type == "tag") {
-            $allPosts = executeQuery("SELECT * FROM posts WHERE post_tags LIKE '%$keyword%'");
+        $query = "";
+
+        global $pageStartPosition;
+
+        if ($type == "pageNo") {
+            $pageStartPosition = ($keyword - 1) * 6;
         }
+
+        if ($type == "pageNo") {
+            $query = "SELECT * FROM posts";
+        } else if ($type == "search") {
+            $query = "SELECT * FROM posts WHERE post_tags LIKE '%$keyword%' OR post_title LIKE '%$keyword%'";
+        } else if ($type == "category") {
+            $query = "SELECT * FROM posts WHERE post_category_id = $keyword";
+        } else if ($type == "tag") {
+            $query = "SELECT * FROM posts WHERE post_tags LIKE '%$keyword%'";
+        }
+
+        $allPosts = executeQuery($query);
 
         global $postCount;
         $postCount = ceil($allPosts->num_rows / 6);
+
+        $allPosts = executeQuery($query . " LIMIT $pageStartPosition, 6");
         
         while ($row = $allPosts->fetch_assoc()) {
             showSinglePost($row);
