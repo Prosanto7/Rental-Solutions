@@ -12,29 +12,48 @@
     if ($_POST["width"] > 700) {
         if ($pageCount < 10) {
             for ($i = 1; $i <= $pageCount; $i++) {
-                $data .= printLink($i, $data);
+                $data .= printLink($i);
             }  
         } else {
-            for ($i = 1; $i <= 4; $i++) {
-                $data .= printLink($i, $data);
+            $start = 1; $end = 4;
+
+            if ($_GET["no"] >= 4) {
+                $start = $_GET["no"] - 2;
+                $end = $_GET["no"] + 1;
+            }
+
+            if ($_GET["no"] >= $pageCount - 4) {
+                $start =  $pageCount - 7;
+                $end =  $pageCount - 4;
+            }
+
+            for ($i = $start; $i <= $end; $i++) {
+                $data .= printLink($i);
             }
 
             $data .= "<li class='page-item'><a class='page-link'>..</a></li>";
 
 
-            for ($i = $pageCount - 4; $i <= $pageCount; $i++) {
-                $data .= printLink($i, $data);
+            for ($i = $pageCount - 3; $i <= $pageCount; $i++) {
+                $data .= printLink($i);
             }
            
         }
     } else {
         if ($pageCount < 5) {
             for ($i = 1; $i <= $pageCount; $i++) {
-                $data .= printLink($i, $data);
+                $data .= printLink($i);
             }  
         } else {
-            for ($i = 1; $i <= 5; $i++) {
-                $data .= printLink($i, $data);
+            $start = 1; $end = 5;
+
+            if ($_GET["no"] >= 4) {
+                $start = $_GET["no"] - 2;
+                $end = $_GET["no"] + 1;
+            }
+
+            for ($i = $start; $i <= $end; $i++) {
+                $data .= printLink($i);
             }
         }
     }
