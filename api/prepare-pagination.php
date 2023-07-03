@@ -3,7 +3,7 @@
     $data = "";
  
     if ($_GET["no"] != 1) {
-        $data .= "<li class='page-item'><a class='page-link' href='index.php?page=home&no=" . ($_GET["no"] - 1) . "'>Previous</a></li>";
+        $data .= "<li class='page-item'><a class='page-link' href='/Rental-Solutions/page/". ($_GET["no"] - 1) ."'>Previous</a></li>";
     }
     
     $pageCount = $_POST["count"];
@@ -64,7 +64,7 @@
     }
 
     if ($_GET["no"] != $pageCount) {
-        $data .= "<li class='page-item'><a class='page-link' href='index.php?page=home&no=" . ($_GET["no"] + 1) . "'>Next</a></li>";
+        $data .= "<li class='page-item'><a class='page-link' href='/Rental-Solutions/page/". ($_GET["no"] + 1) ."'>Next</a></li>";
     }
 
     echo $data;
@@ -73,9 +73,9 @@
 <?php 
     function printLink($i) {
         if ($i == $_GET["no"]) {
-            return "<li class='page-item active'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
+            return "<li class='page-item active'><a class='page-link' href='/Rental-Solutions/page/{$i}'>{$i}</a></li>";
         } else {
-            return "<li class='page-item'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
+            return "<li class='page-item'><a class='page-link' href='/Rental-Solutions/page/{$i}'>{$i}</a></li>";
         }
     }
 ?>

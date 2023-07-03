@@ -46,7 +46,7 @@
         <script>
           $(document).ready(function() {
             $.ajax({
-              url: 'api/prepare-pagination.php?no=<?php if (isset($_GET["no"])) { echo $_GET["no"]; } else { echo 1; }?>',
+              url: '/Rental-Solutions/api/prepare-pagination.php?no=<?php if (isset($_GET["no"])) { echo $_GET["no"]; } else { echo 1; }?>',
               type: 'post',
               data: {width: screen.width, count: <?php global $postCount; echo $postCount;?>},
               success: function(data) {

@@ -9,7 +9,7 @@
 			<div class="row">
 				<div class="col-lg-8 mb-5 mb-lg-0">
 					<article>
-						<img loading="lazy" decoding="async" src="images/post/<?php echo $row["post_image"] ?>" alt="Post Thumbnail" class="w-100">
+						<img loading="lazy" decoding="async" src="/Rental-Solutions/images/post/<?php echo $row["post_image"] ?>" alt="Post Thumbnail" class="w-100">
 						<ul class="post-meta mb-2 mt-4">
 							<li class="mr-3">
 								<img src="images/date.png" alt="Date" width="20px"> <span><?php echo getFormattedDate($row["post_date"]) ?></span>

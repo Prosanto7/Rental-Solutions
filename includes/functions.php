@@ -21,14 +21,14 @@
     function showAllCategories() {
         $allTags = executeQuery("SELECT * FROM categories");
         while ($row = $allTags->fetch_assoc()) {
-            echo "<a class='dropdown-item' href='index.php?page=home&category={$row["category_id"]}'>" . $row["category_name"] . "</a>";
+            echo "<a class='dropdown-item' href='/Rental-Solutions/category/{$row["category_id"]}'>" . $row["category_name"] . "</a>";
         }
     }
 
     function showAllTags() {
         $allTags = executeQuery("SELECT * FROM tags");
         while ($row = $allTags->fetch_assoc()) {
-            echo "<li><a href='index.php?page=home&tag={$row["tag_name"]}'>" . $row["tag_name"] . "</a></li>";
+            echo "<li><a href='/Rental-Solutions/tag/{$row["tag_name"]}'>" . $row["tag_name"] . "</a></li>";
         }
     }
 
@@ -37,7 +37,7 @@
             include ("views/main-section.php");
         } else if ($page == "login") {
             include ("views/login.php");
-        } else if ($page == "admin") {
+        } else if ($page == "admin-login") {
             include ("views/admin-login.php");
         } else if ($page == "post") {
             include ("views/post.php");
@@ -130,7 +130,7 @@
                             <div class="post-info"> <span class="text-uppercase"><?php echo getFormattedDate($row["post_date"]) ?></span>
                                 <span class="text-uppercase"><?php echo showTimeDifference($row["post_date"]) ?> ago</span>
                             </div>
-                            <img loading="lazy" decoding="async" src="images/post/<?php echo $row["post_image"]?>" alt="Post Thumbnail" class="w-100">
+                            <img loading="lazy" decoding="async" src="/Rental-Solutions/images/post/<?php echo $row["post_image"]?>" alt="Post Thumbnail" class="w-100">
                         </div>
                     </a>
                     <div class="card-body px-0 pb-0">
