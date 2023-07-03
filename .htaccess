@@ -8,4 +8,4 @@ RewriteRule ^page/(\d+)$ index.php?page=home&no=$1 [NC,L]
 
 RewriteRule ^category/(\d+)$ index.php?page=home&category=$1 [NC,L]
 
-RewriteRule ^tag/([^/]+)$ index.php?page=home&tag=$1 [NC,L]
+RewriteRule ^tag/([^/]+)$ index.php?page=home&tag=$1 [NE,B,L]

@@ -113,7 +113,7 @@
         $tagArray = explode((","), $tags);
 
         foreach ($tagArray as $tag) {
-            echo "<li class='mr-2'> <a href=''> {$tag} </a> </li>";
+            echo "<li class='mr-2'> <a href='/Rental-Solutions/tag/".trim($tag)."'> {$tag} </a> </li>";
         }
     }
 
