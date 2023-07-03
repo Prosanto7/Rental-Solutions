@@ -610,7 +610,7 @@ a.post-title-sm:hover {
 }
 .pagination .page-item .page-link {
   display: inline-block;
-  width: 42px;
+  min-width: 42px;
   height: 42px;
   border-radius: 0;
   border: 1px solid #ececec;

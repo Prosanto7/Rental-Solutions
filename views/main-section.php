@@ -41,43 +41,20 @@
       </div>
       <hr>
       <div>
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <?php
-            global $postCount;
-            if ($postCount < 10) {
-              for ($i = 1; $i <= $postCount; $i++) {
-                if ((isset($_GET["no"]) && $i == $_GET["no"]) || (!isset($_GET["no"]) && $i == 1)) {
-                  echo "<li class='page-item active'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
-                } else {
-                  echo "<li class='page-item'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
-                }
+        <ul class="pagination" id="paginationPortion">
+        </ul>
+        <script>
+          $(document).ready(function() {
+            $.ajax({
+              url: 'api/prepare-pagination.php?no=<?php if (isset($_GET["no"])) { echo $_GET["no"]; } else { echo 1; }?>',
+              type: 'post',
+              data: {width: screen.width, count: <?php global $postCount; echo $postCount;?>},
+              success: function(data) {
+                $('#paginationPortion').html(data);
               }
-            } else {
-              for ($i = 1; $i <= 4; $i++) {
-                if ((isset($_GET["no"]) && $i == $_GET["no"]) || (!isset($_GET["no"]) && $i == 1)) {
-                  echo "<li class='page-item active'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
-                } else {
-                  echo "<li class='page-item'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
-                }
-              }
-             
-              echo "<li class='page-item'><a class='page-link'>..</a></li>";
-
-    
-              for ($i = $postCount - 4; $i <= $postCount; $i++) {
-                if ((isset($_GET["no"]) && $i == $_GET["no"]) || (!isset($_GET["no"]) && $i == 1)) {
-                  echo "<li class='page-item active'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
-                } else {
-                  echo "<li class='page-item'><a class='page-link' href='index.php?page=home&no={$i}'>{$i}</a></li>";
-                }
-              }
-            }
-            ?>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
+            });
+          });
+        </script>
       </div>
     </div>
   </section>
