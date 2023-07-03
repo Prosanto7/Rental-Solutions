@@ -52,6 +52,11 @@
                 $end = $_GET["no"] + 1;
             }
 
+            if ($_GET["no"] == $pageCount) {
+                $start = $pageCount - 3;
+                $end = $pageCount;
+            }
+
             for ($i = $start; $i <= $end; $i++) {
                 $data .= printLink($i);
             }
