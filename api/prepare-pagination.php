@@ -1,15 +1,17 @@
 
 <?php
     $data = "";
-    $data .= "<li class='page-item'><a class='page-link' href='#'>Previous</a></li>";
+ 
+    if ($_GET["no"] != 1) {
+        $data .= "<li class='page-item'><a class='page-link' href='index.php?page=home&no=" . ($_GET["no"] - 1) . "'>Previous</a></li>";
+    }
     
-    
-    $postCount = $_POST["count"];
+    $pageCount = $_POST["count"];
    
 
     if ($_POST["width"] > 700) {
-        if ($postCount < 10) {
-            for ($i = 1; $i <= $postCount; $i++) {
+        if ($pageCount < 10) {
+            for ($i = 1; $i <= $pageCount; $i++) {
                 $data .= printLink($i, $data);
             }  
         } else {
@@ -20,14 +22,14 @@
             $data .= "<li class='page-item'><a class='page-link'>..</a></li>";
 
 
-            for ($i = $postCount - 4; $i <= $postCount; $i++) {
+            for ($i = $pageCount - 4; $i <= $pageCount; $i++) {
                 $data .= printLink($i, $data);
             }
            
         }
     } else {
-        if ($postCount < 5) {
-            for ($i = 1; $i <= $postCount; $i++) {
+        if ($pageCount < 5) {
+            for ($i = 1; $i <= $pageCount; $i++) {
                 $data .= printLink($i, $data);
             }  
         } else {
@@ -36,7 +38,11 @@
             }
         }
     }
-    $data .= "<li class='page-item'><a class='page-link' href='#'>Next</a></li>";
+
+    if ($_GET["no"] != $pageCount) {
+        $data .= "<li class='page-item'><a class='page-link' href='index.php?page=home&no=" . ($_GET["no"] + 1) . "'>Next</a></li>";
+    }
+
     echo $data;
 ?>
 
