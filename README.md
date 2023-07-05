@@ -1,5 +1,5 @@
 # Rental-Solutions
-Rental Solutions CMS is a comprehensive content management system that helps to rent your next house. The project is developed using raw HTML, CSS, and JavaScript for the front-end, and basic PHP as the server-side language. It incorporates features for non-registered users, registered users, and administrators, providing a user-friendly and efficient platform for managing rental-related content. With its responsive design, pagination, social media integration, and security measures, Rental Solutions offers a robust and reliable solution for rental service management.
+Rental Solutions CMS is an all-inclusive content management system designed to assist both homeowners looking to rent out their properties and individuals in search of rental accommodations. The project is developed using raw HTML, CSS, and JavaScript for the front-end, and basic PHP as the server-side language. It incorporates features for non-registered users, registered users, and administrators, providing a user-friendly and efficient platform for managing rental-related content. With its responsive design, pagination, social media integration, and security measures, Rental Solutions offers a robust and reliable solution for rental services. 
 
 ## Stakeholders & Features
 
