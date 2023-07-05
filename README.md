@@ -22,4 +22,67 @@ As a demonstration of front-end development skills, the admin interface of the C
 ```
   Home Page
 ```
- ![Home Page]()
+ ![Home Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/home-page.png)
+ ```
+  Login Page
+  ```
+ ![Login Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/login-page.png)
+
+ ```
+ Registration Page
+  ```
+ ![Registration Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/registration-page.png)
+
+  ```
+  Rental information posted by a user
+  ```
+ ![Post Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/post-page.png)
+
+  ```
+  Creating a post from the user end
+  ```
+ ![Create Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/create-post-page.png)
+
+   ```
+  Handling posts from the user end
+  ```
+ ![Posts Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/user-all-post-page.png)
+
+  ```
+  Handling comments from the user end
+  ```
+ ![Create Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/comments-page.png)
+
+  ```
+  Updating profile from the user end
+  ```
+ ![Profile Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/profile-page.png)
+
+  ```
+  Admin Dashboard
+  ```
+ ![Admin Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/admin-dashboard-page.png)
+
+  ```
+  Admin Dashboard Dark Mode
+  ```
+ ![Admin Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/admin-dashboard-dark-mode-page.png)
+
+  ```
+  Handling all posts from admin
+  ```
+ ![Admin Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/admin-all-post-page.png)
+
+  ```
+  Handling all categories from admin
+  ```
+ ![Admin Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/admin-all-category-page.png)
+
+   ```
+  Handling all tags from admin
+  ```
+ ![Admin Page](https://github.com/Prosanto7/Rental-Solutions/blob/main/images/preview/admin-all-tag-page.png)
+
+
+## Live Website
+- Visit at <a href="https://erayhan.000webhostapp.com/index.php" target="_blank">`Rental Solutions`</a>
